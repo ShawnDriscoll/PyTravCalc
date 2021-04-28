@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PyTravCalc Tutorial &#8212; PyTravCalc 3.1 Manual</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="shortcut icon" href="_static/shonner_die_icon_16x16.ico"/>
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Open Source" href="license.html" />
+    <link rel="prev" title="Installing" href="installing.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="license.html" title="Open Source"
+             accesskey="N">next</a></li>
+        <li class="right" >
+          <a href="installing.html" title="Installing"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyTravCalc 3.1 Manual</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>PyTravCalc Tutorial</strong></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="pytravcalc-tutorial">
+<h1><strong>PyTravCalc Tutorial</strong><a class="headerlink" href="#pytravcalc-tutorial" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-gui">
+<h2>The GUI<a class="headerlink" href="#the-gui" title="Permalink to this headline">¶</a></h2>
+<p>After the program starts, there should be a screen that looks like:</p>
+<div class="figure align-default">
+<img alt="_images/program_start_screen.png" src="_images/program_start_screen.png" />
+</div>
+<p>The screen contains various outlined areas that are labeled as:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><strong>Task:</strong></div>
+<div class="line">Choose the difficulty and die-modifiers for a task.</div>
+<div class="line"><br /></div>
+<div class="line"><strong>Roll:</strong></div>
+<div class="line">Choose the roll type to perform.</div>
+<div class="line"><br /></div>
+<div class="line"><strong>Damage:</strong></div>
+<div class="line">Calculate a damage roll.</div>
+<div class="line"><br /></div>
+<div class="line"><strong>Outcome:</strong></div>
+<div class="line">Displays a plotted graph of the roll chances, and of the roll result if a difficulty is chosen.</div>
+</div>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Plotted graphs are generated only when difficulties are selected. <strong>D66</strong> rolls will never generate graphs.</p>
+</div>
+</div>
+<div class="section" id="making-a-task-roll">
+<h2>Making a Task Roll<a class="headerlink" href="#making-a-task-roll" title="Permalink to this headline">¶</a></h2>
+<p>Typically, task rolls will have a difficulty chosen by the game’s referee. The player simply clicks the <strong>Task Difficulty</strong> button and clicks on the difficulty level. This will unlock the rest of the <strong>Task</strong> area that the player can fill in as well. It’s pretty much self-explanatory how the rest is filled in. It is assumed that the player has a characteristic and a skill in mind when changing these values.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The default <strong>Characteristic</strong> value is <strong>7</strong>. Be sure to input your character’s own value in its place before rolling any dice. The same goes for the <strong>Skill Level</strong>, which has a default of <strong>0</strong>. Give it the value of your character’s skill level for the task being done.</p>
+<p>Don’t worry about the characteristic <strong>Mod</strong> amount. Its value is calculated automatically, as well as the DM <strong>Total</strong>.</p>
+</div>
+<p>Once the DM is calculated, a roll is then made (determined by the referee). The dice will be shown. The roll <strong>Result</strong> and <strong>Effect</strong> will be calculated. And the <strong>Task Time</strong> will be calculated if a <strong>Timeframe</strong> was chosen.</p>
+<p>A graph of the <strong>Outcome</strong> will then be displayed.</p>
+</div>
+<div class="section" id="making-a-damage-roll">
+<h2>Making a Damage Roll<a class="headerlink" href="#making-a-damage-roll" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>D</strong> and <strong>DD</strong> rolls calculate the “soaking” of damage against armor. <strong>Armor</strong> amount is entered, along with hidden <strong>Cover</strong> amount and <strong>AP</strong> amount. The number of dice is selected. And a <strong>DM</strong> can be added before clicking either the <strong>D</strong> or <strong>DD</strong> roll buttons. The effect will be added to <strong>D</strong> rolls.</p>
+<p>The <strong>Clear</strong> button will reset the damage area.
+The <strong>Clear All</strong> button will reset all the areas.</p>
+</div>
+<div class="section" id="settings-menu">
+<h2>Settings Menu<a class="headerlink" href="#settings-menu" title="Permalink to this headline">¶</a></h2>
+<p>Dice styles can be selected from the <strong>Dice</strong> menu.
+Voice styles (yes, voice styles) can be selected from the <strong>Audio</strong> menu.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only the <strong>female voice</strong> works with general die rolls (rolls made without a <strong>Task Difficulty</strong>).</p>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/shonner_trans.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#"><strong>PyTravCalc Tutorial</strong></a><ul>
+<li><a class="reference internal" href="#the-gui">The GUI</a></li>
+<li><a class="reference internal" href="#making-a-task-roll">Making a Task Roll</a></li>
+<li><a class="reference internal" href="#making-a-damage-roll">Making a Damage Roll</a></li>
+<li><a class="reference internal" href="#settings-menu">Settings Menu</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="installing.html"
+                        title="previous chapter"><strong>Installing</strong></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="license.html"
+                        title="next chapter"><strong>Open Source</strong></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="license.html" title="Open Source"
+             >next</a></li>
+        <li class="right" >
+          <a href="installing.html" title="Installing"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">PyTravCalc 3.1 Manual</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><strong>PyTravCalc Tutorial</strong></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, SHONNER CORP.
+      Last updated on Apr 28, 2021.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+    </div>
+  </body>
+</html>
