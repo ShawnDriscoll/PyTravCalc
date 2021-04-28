@@ -10,7 +10,7 @@
 
 
 
-**TravCalc 3.1.0b**
+**PyTravCalc 3.1.0b**
 ===================
 
 .. figure:: images/pytravcalc_manual_cover_art.png
