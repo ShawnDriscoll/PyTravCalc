@@ -1,6 +1,6 @@
 
 #############
-## diceroll
+## PyDiceroll
 #############
 Logs/
 *.log
@@ -21,10 +21,11 @@ Desktop.ini
 ############
 ## Python
 ############
+__pycache__/
 
-*.pyc
-
-# Packages
+#################
+# Python Packages
+#################
 *.egg
 *.egg-info
 eggs/
