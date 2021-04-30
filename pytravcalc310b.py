@@ -2,13 +2,13 @@
 #   PyTravCalc 3.1.0 Beta for Mongoose Traveller 2nd Edition
 #   Written for Classic Python 3.9.4
 #
-#############################################################
+##############################################################
 
 """
 PyTravCalc 3.1.0 Beta for Mongoose Traveller 2nd Edition
-------------------------------------------------------
+--------------------------------------------------------
 
-This program rolls dice and calculates their effects.
+This program rolls 6-sided dice and calculates their effects.
 
 The Traveller game in all forms is owned by Far Future Enterprises.
 Copyright 1977 - 2021 Far Future Enterprises.
@@ -44,6 +44,9 @@ __version__ = '3.1.0b'
 
 class aboutDialog(QDialog, Ui_aboutDialog):
     def __init__(self, parent=None):
+        '''
+        Open the About dialog window
+        '''
         QDialog.__init__(self, parent)
         log.info('PyQt5 aboutDialog initializing...')
         flags = Qt.Drawer | Qt.WindowStaysOnTopHint
@@ -52,13 +55,21 @@ class aboutDialog(QDialog, Ui_aboutDialog):
         self.aboutOKButton.clicked.connect(self.acceptOKButtonClicked)
         log.info('PyQt5 aboutDialog initialized.')
         
-    def acceptOKButtonClicked(self): 
+    def acceptOKButtonClicked(self):
+        '''
+        Close the About dialog window
+        '''
         log.info('PyQt5 aboutDialog closing...')
         self.close()
 
 #class MainWindow(QMainWindow, form_class):
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
+        '''
+        Display the main app window.
+        Connect all the buttons to their functions.
+        Initialize their value ranges.
+        '''
         QMainWindow.__init__(self, parent)
         log.info('PyQt5 MainWindow initializing...')
         self.setupUi(self)
@@ -171,29 +182,48 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.selCover.addItem('Fortifications (+20)')
         self.selCover.setCurrentIndex(0)
         self.selCover.currentIndexChanged.connect(self.selCover_valueChanged)
+        
+        # Will the app speak by default when used?
         self.muted = False
+
+        # set the default roll type
         self.roll_type = '2D'
+
+        # Is the difficulty known?
         self.unknown = False
+
+        # Set difficulty to not chosen yet
         self.target_num = 0
-        self.standard_dice = True
+
+        # Choose which cool-looking die to use and set it to True
+        self.standard_dice = False
         self.traveller_dice = False
-        self.ako_dice = False
+        self.ako_dice = True
         self.metal_dice = False
         self.cubble_dice = False
         self.roman_dice = False
         self.gridgroove_dice = False
-        self.question_dice = False
-        self.dice_type ='s'
-        self.mixed_dice = False
+        
+        # The set the dice type to match the die chosen
+        self.dice_type ='a'
         self.dice_list = ['s', 't', 'a', 'm', 'c', 'r', 'g']
+        self.question_dice = False
+        self.mixed_dice = False
+
+        # Set the default voice to True
         self.male_voice = False
         self.female_voice = True
         self.robot_voice = False
         self.actionMaleVoice.setDisabled(self.male_voice)
         self.actionFemaleVoice.setDisabled(self.female_voice)
         self.actionRobotVoice.setDisabled(self.robot_voice)
+
+        # Voice can be 'female', 'male', or 'robot'
         self.voice_type = 'female'
+
+        # Clear the graph
         self.blank_graph = True
+
         self.timeframe_DM = 0
         self.previous_timeframe_DM = 0
         self.DM_modifier = 0
@@ -203,6 +233,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.total_damage = 0
         self.actual_armor = 0
         self.cover_modifier = 0
+
+        # Set active/deactive menu items
         self.actionPlaySample.setDisabled(self.muted)
         self.actionMute.setDisabled(self.muted)
         self.actionUnMute.setDisabled(not self.muted)
@@ -215,27 +247,42 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
+
+        # Set the About menu item
         self.popAboutDialog=aboutDialog()
+
         log.info('PyQt5 MainWindow initialized.')
 
     def selDiff_valueChanged(self):
+        '''
+        Choose the difficulty for the roll
+        '''
         difficulty_level = [0, 2, 4, 6, 8, 10, 12, 14, 16]
         if self.selDiff.currentIndex() == 0:
             self.target_num = 0
         elif self.selDiff.currentIndex() == 9:
+            
+            # A random difficulty has been asked for
             log.debug('Difficulty is random')
             self.unknown = False
             self.selDiff.setCurrentIndex(randint(1,8))
             self.target_num = difficulty_level[self.selDiff.currentIndex()]
         elif self.selDiff.currentIndex() == 10:
+            
+            # The difficulty is unknown to the player.
+            # The Referee can see the difficulty shown on their console.
             self.unknown = True
             self.target_num = difficulty_level[randint(1,8)]
             log.debug('Difficulty is unknown: (%d+)' % self.target_num)
             print('The unknown Target Number is %d+' % self.target_num)
         elif self.selDiff.currentIndex() >= 1 and self.selDiff.currentIndex() <= 8:
+            
+            # A regular difficulty has been given to the player to input
             self.unknown = False
             self.target_num = difficulty_level[self.selDiff.currentIndex()]
             log.debug('Buttons initialized for difficulty: (%d+)' % self.target_num)
+        
+        # Reset the buttons and graph whenever a difficulty has been chosen
         self.roll_type = '2D'
         self.blank_graph = True
         self.update_graph()
@@ -274,9 +321,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.inputDM.setValue(0)
         self.selChained.setChecked(False)
         self.rollresult.setText('')
+        
+        # Remove the dice from the display.
         self.die1Label.setPixmap(QPixmap(':/images/die1_0.png'))
         self.die2Label.setPixmap(QPixmap(':/images/die2_0.png'))
         self.die3Label.setPixmap(QPixmap(':/images/die3_0.png'))
+
+        # Reset the screen
         self.tasktime_result.setText('')
         self.effect_result.setText('')
         self.effect_damage.setText('')
@@ -286,6 +337,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.roll_effect = 0
 
     def inputtasks_value_Changed(self):
+        '''
+        A number of tasks was entered.
+        Adjust the difficulty for that.
+        '''
         self.NewNumTasks = self.inputtasks.value()
         self.target_num += (self.NewNumTasks - self.PreviousNumTasks) * 2
         if self.target_num > 16:
@@ -301,6 +356,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         log.debug('Number of tasks being performed: %d' % self.NewNumTasks)
 
     def selTimeframe_valueChanged(self):
+        '''
+        A timeframe was selected
+        '''
         self.selNewTimeframe.setCurrentIndex(self.selTimeframe.currentIndex())
         if self.selTimeframe.currentIndex() == 0:
             self.NewTimeframe = True
@@ -311,6 +369,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.inputDM.setValue(self.DM_modifier)
         self.timeframe_DM = 0
         self.previous_timeframe_DM = self.timeframe_DM
+
+        # reset the screen
         self.die1Label.setPixmap(QPixmap(':/images/die1_0.png'))
         self.die2Label.setPixmap(QPixmap(':/images/die2_0.png'))
         self.die3Label.setPixmap(QPixmap(':/images/die3_0.png'))
@@ -324,6 +384,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.update_graph()
         
     def selNewTimeframe_valueChanged(self):
+        '''
+        A new timeframe was selected.
+        Compare it with the initial timeframe to calculate a DM.
+        '''
         self.timeframe_DM = (self.selNewTimeframe.currentIndex() - self.selTimeframe.currentIndex()) * 2
         self.DM_modifier += - self.previous_timeframe_DM
         self.DM_modifier += self.timeframe_DM
@@ -331,12 +395,18 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.previous_timeframe_DM = self.timeframe_DM
 
     def inputchar_valueChanged(self):
+        '''
+        A characteristic value was entered.
+        Update the characteristic modifier if needed.
+        '''
         self.charmod_value = self.char_dm[self.inputchar.value()]
         self.charmod.setText(str(self.charmod_value))
         if self.chained_task:
             self.totalDM.setText(str(self.inputlevel.value() + self.charmod_value + self.inputDM.value() + self.previous_effect_DM))
         else:
             self.totalDM.setText(str(self.inputlevel.value() + self.charmod_value + self.inputDM.value()))
+        
+        # reset the screen
         self.rollresult.setText('')
         self.die1Label.setPixmap(QPixmap(':/images/die1_0.png'))
         self.die2Label.setPixmap(QPixmap(':/images/die2_0.png'))
@@ -353,10 +423,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.update_graph()
     
     def inputlevel_valueChanged(self):
+        '''
+        A skill level was entered.
+        Add it to the DM total.
+        '''
         if self.chained_task:
             self.totalDM.setText(str(self.inputlevel.value() + self.charmod_value + self.inputDM.value() + self.previous_effect_DM))
         else:
             self.totalDM.setText(str(self.inputlevel.value() + self.charmod_value + self.inputDM.value()))
+        
+        # reset the screen
         self.rollresult.setText('')
         self.die1Label.setPixmap(QPixmap(':/images/die1_0.png'))
         self.die2Label.setPixmap(QPixmap(':/images/die2_0.png'))
@@ -374,10 +450,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.update_graph()
         
     def inputDM_valueChanged(self):
+        '''
+        A DM was entered.
+        Add it to the DM total.
+        '''
         if self.chained_task:
             self.totalDM.setText(str(self.inputlevel.value() + self.charmod_value + self.inputDM.value() + self.previous_effect_DM))
         else:
             self.totalDM.setText(str(self.inputlevel.value() + self.charmod_value + self.inputDM.value()))
+        
+        # reset the screen
         self.DM_modifier = self.inputDM.value()
         self.rollresult.setText('')
         self.die1Label.setPixmap(QPixmap(':/images/die1_0.png'))
@@ -395,6 +477,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.update_graph()
         
     def selChained_valueChanged(self):
+        '''
+        Tasks are being chained.
+        Use previous effect as a DM.
+        '''
         self.chained_task = self.selChained.isChecked()
         if self.chained_task:
             self.previous_effect_DM = self.next_effect_DM
@@ -404,6 +490,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.previous_effect_DM = self.next_effect_DM
             self.chainedDM.setText('')
             self.totalDM.setText(str(self.inputlevel.value() + self.charmod_value + self.inputDM.value()))
+
+        # reset the screen
         self.rollresult.setText('')
         self.die1Label.setPixmap(QPixmap(':/images/die1_0.png'))
         self.die2Label.setPixmap(QPixmap(':/images/die2_0.png'))
@@ -478,11 +566,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 if not self.muted:
                     m_media.setMedia(MM.QMediaContent(QUrl('qrc:/sounds/' + self.voice_type + '_exceptional_success.mp3')))
                     m_media.play()
+            
+            # reset the damage area at the bottom
             self.effect_damage.setText(str(self.roll_effect))
             self.inputdice.setValue(1)
             self.inputDamageDM.setValue(0)
             self.totalDamage.setText('')
             self.update_graph()
+
+            # calculate the amount of time spent on the task
             task_time = self.selNewTimeframe.currentIndex()
             if task_time == 0:
                 self.tasktime_result.setText('Not Available')
@@ -506,6 +598,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.tasktime_result.setText(str(roll('1D6')) + ' Days')
         else:
             if not self.muted:
+
+                # Say the 2D roll. Only the female voice can say it for now.
                 m_media.setMedia(MM.QMediaContent(QUrl('qrc:/sounds/' + self.voice_type + '_' + str(self.natural_roll_1 + self.natural_roll_2) + '.mp3')))
                 m_media.play()
 
@@ -587,11 +681,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 if not self.muted:
                     m_media.setMedia(MM.QMediaContent(QUrl('qrc:/sounds/' + self.voice_type + '_exceptional_success.mp3')))
                     m_media.play()
+
+            # reset the damage area at the bottom
             self.effect_damage.setText(str(self.roll_effect))
             self.inputdice.setValue(1)
             self.inputDamageDM.setValue(0)
             self.totalDamage.setText('')
             self.update_graph()
+
+            # calculate the amount of time spent on the task
             task_time = self.selNewTimeframe.currentIndex()
             if task_time == 0:
                 self.tasktime_result.setText('Not Available')
@@ -615,6 +713,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.tasktime_result.setText(str(roll('1D6')) + ' Days')
         else:
             if not self.muted:
+
+                # Say the Bane roll. Only the female voice can say it for now.
                 m_media.setMedia(MM.QMediaContent(QUrl('qrc:/sounds/' + self.voice_type + '_' + str(self.natural_roll_1 + self.natural_roll_2) + '.mp3')))
                 m_media.play()
 
@@ -696,11 +796,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 if not self.muted:
                     m_media.setMedia(MM.QMediaContent(QUrl('qrc:/sounds/' + self.voice_type + '_exceptional_success.mp3')))
                     m_media.play()
+
+            # reset the damage area at the bottom
             self.effect_damage.setText(str(self.roll_effect))
             self.inputdice.setValue(1)
             self.inputDamageDM.setValue(0)
             self.totalDamage.setText('')
             self.update_graph()
+
+            # calculate the amount of time spent on the task
             task_time = self.selNewTimeframe.currentIndex()
             if task_time == 0:
                 self.tasktime_result.setText('Not Available')
@@ -724,6 +828,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.tasktime_result.setText(str(roll('1D6')) + ' Days')
         else:
             if not self.muted:
+
+                # Say the Boon roll. Only the female voice can say it for now.
                 m_media.setMedia(MM.QMediaContent(QUrl('qrc:/sounds/' + self.voice_type + '_' + str(self.natural_roll_1 + self.natural_roll_2) + '.mp3')))
                 m_media.play()
 
@@ -756,8 +862,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.die2Label.setPixmap(QPixmap(':/images/die2_' + str(self.natural_roll_2) + self.dice_type + '.png'))
         self.die3Label.setPixmap(QPixmap(':/images/die3_0.png'))
         if not self.muted:
+
+            # Say the D66 roll. Only the female voice can say it for now.
             m_media.setMedia(MM.QMediaContent(QUrl('qrc:/sounds/' + self.voice_type + '_' + str(self.natural_roll_1) + str(self.natural_roll_2) + '.mp3')))
             m_media.play()
+        
+        # reset the screen
         self.effect_result.setText('')
         self.effect_damage.setText('')
         self.blank_graph = True
@@ -813,12 +923,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.totalDamage.setText('')
 
     def inputarmor_valueChanged(self):
+        '''
+        An armor value was entered
+        '''
         self.totalDamage.setText('')
         
     def inputdice_valueChanged(self):
+        '''
+        The number of damage dice was entered
+        '''
         self.totalDamage.setText('')
 
     def damage_buttonClicked(self):
+        '''
+        The "D" damage button was clicked/rolled
+        '''
         self.effect_damage.setText(str(self.roll_effect))
         self.actual_armor = self.inputarmor.value() + self.cover_modifier - self.inputap.value()
         if self.actual_armor < 0:
@@ -833,6 +952,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.totalDamage.setText(str(self.total_damage))
 
     def destructive_buttonClicked(self):
+        '''
+        The "DD" damage button was clicked/rolled
+        '''
         self.effect_damage.setText('')
         self.actual_armor = self.inputarmor.value() + self.cover_modifier - self.inputap.value() * 10
         if self.actual_armor < 0:
@@ -850,12 +972,21 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.totalDamage.setText(str(self.total_damage))
 
     def inputdamageDM_valueChanged(self):
+        '''
+        The DM for damage was entered
+        '''
         self.totalDamage.setText('')
 
     def inputap_valueChanged(self):
+        '''
+        A value for AP (armor piercing trait) was entered
+        '''
         self.totalDamage.setText('')
     
     def selCover_valueChanged(self):
+        '''
+        A hidden cover value was selected
+        '''
         cover_amount = [0, 2, 6, 8, 10, 15, 20]
         if self.selCover.currentIndex() == 0:
             self.cover_modifier = 0
@@ -864,7 +995,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             log.debug('Cover Modifier added: (+%d)' % self.cover_modifier)
         
     def MaleVoice_menu(self):
-        ''' Use a male voice '''
+        '''
+        Use a male voice
+        '''
         self.male_voice = True
         self.female_voice = False
         self.robot_voice = False
@@ -918,7 +1051,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         
     def Mute_menu(self):
         '''
-        Don't use any voice
+        Don't use any voice (muted voice)
         '''
         m_media.setMedia(MM.QMediaContent(QUrl('qrc:/sounds/' + self.voice_type + '_running_silent.mp3')))
         m_media.play()
@@ -934,6 +1067,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRobotVoice.setDisabled(self.robot_voice)
         
     def StandardDice_menu(self):
+        '''
+        set flags for standard dice use
+        '''
         self.standard_dice = True
         self.traveller_dice = False
         self.ako_dice = False
@@ -955,6 +1091,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.dice_type = 's'
         
     def TravellerDice_menu(self):
+        '''
+        set flags for Traveller dice use
+        '''
         self.standard_dice = False
         self.traveller_dice = True
         self.ako_dice = False
@@ -976,6 +1115,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.dice_type = 't'
 
     def AKODice_menu(self):
+        '''
+        set flags for AKO dice use
+        '''
         self.standard_dice = False
         self.traveller_dice = False
         self.ako_dice = True
@@ -997,6 +1139,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.dice_type = 'a'
 
     def MetalDice_menu(self):
+        '''
+        set flags for metal dice use
+        '''
         self.standard_dice = False
         self.traveller_dice = False
         self.ako_dice = False
@@ -1018,6 +1163,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.dice_type = 'm'
 
     def CUBBLEDice_menu(self):
+        '''
+        set flags for CUBBLED dice use
+        '''
         self.standard_dice = False
         self.traveller_dice = False
         self.ako_dice = False
@@ -1039,6 +1187,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.dice_type = 'c'
         
     def RomanDice_menu(self):
+        '''
+        set flags for Roman dice use
+        '''
         self.standard_dice = False
         self.traveller_dice = False
         self.ako_dice = False
@@ -1060,6 +1211,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.dice_type = 'r'
         
     def GridGrooveDice_menu(self):
+        '''
+        set flags for GridGroove dice use
+        '''
         self.standard_dice = False
         self.traveller_dice = False
         self.ako_dice = False
@@ -1081,6 +1235,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.dice_type = 'g'
     
     def QuestionDice_menu(self):
+        '''
+        set flags for Question Mark dice use
+        '''
         self.standard_dice = False
         self.traveller_dice = False
         self.ako_dice = False
@@ -1102,6 +1259,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.dice_type = 'q'
         
     def MixedDice_menu(self):
+        '''
+        set flags for mixed-use dice
+        '''
         self.standard_dice = False
         self.traveller_dice = False
         self.ako_dice = False
@@ -1121,15 +1281,27 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.dice_type = ''
         
     def Visit_Blog(self):
+        '''
+        open web browser to blog URL
+        '''
         os.startfile('http://shawndriscoll.blogspot.com')
         
     def Feedback(self):
+        '''
+        open an email letter to send as feedback to the author
+        '''
         os.startfile('mailto:shawndriscoll@hotmail.com?subject=Feedback: ' + __app__ + ' for Mongoose Traveller 2nd Edition')
         
     def Overview_menu(self):
+        '''
+        open this app's PDF manual
+        '''
         os.startfile('pytravcalc_manual.pdf')
         
     def actionAbout_triggered(self):
+        '''
+        open the About window
+        '''
         if not self.muted:
             m_media.setMedia(MM.QMediaContent(QUrl('qrc:/sounds/' + self.voice_type + '_traveller_ownership.mp3')))
             #m_media.setMedia(MM.QMediaContent(QUrl.fromLocalFile(CURRENT_DIR + '\sounds\\' + 'female' + '_traveller_ownership.mp3')))
@@ -1141,12 +1313,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.popAboutDialog.show()
 
     def quitButton_clicked(self):
+        '''
+        select "Quit" from the drop-down menu
+        '''
         log.info(__app__ + ' quiting...')
         log.info(__app__ + ' DONE.')
         self.close()
         
     def update_graph(self):
-        
+        '''
+        display a 2D, Boon, or Bane graph of the dice roll result
+        '''
         if self.roll_type == '2D':
             log.debug('Access 2D (default) graph')
             xper_range = '100  97.2  91.7  83.3  72.2  58.3  41.7  27.8  16.7  8.3  2.8'
@@ -1246,6 +1423,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
 if __name__ == '__main__':
+
+    '''
+    Technically, this program starts right here when run.
+    If this program is imported instead of run, none of the code below is executed.
+    '''
 
 #     logging.basicConfig(filename = 'PyTravCalc.log',
 #                         level = logging.DEBUG,

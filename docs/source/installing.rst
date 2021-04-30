@@ -7,6 +7,12 @@ Installing and using **PyTravCalc** seems simple enough. Just download the archi
 <https://github.com/ShawnDriscoll/PyTravCalc>`__ and extract it to a folder you prefer.
 
 
+About Fonts
+-----------
+TrueType fonts are included in the fonts folder. Add/install them to ``C:\Windows\Fonts`` if your system
+does not have them.
+
+
 Running PyTravCalc
 ------------------
 If you have Python 3.9.4 installed, you can start ``pytravcalc310b.py`` from a CMD prompt or double-click
