@@ -52,7 +52,7 @@ release = '(2nd Edition)'
 # non-false value, then it is used:
 #today = ''
 # Else, today_fmt is used as the format for a strftime call.
-today_fmt = '%m-%d-%Y'
+today_fmt = '%m/%d/%Y'
 
 # List of documents that shouldn't be included in the build.
 #unused_docs = []
