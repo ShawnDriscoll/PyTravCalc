@@ -1,11 +1,11 @@
 #
-#   TravCalc 3.1.0 Beta for Mongoose Traveller 2nd Edition
+#   PyTravCalc 3.1.0 Beta for Mongoose Traveller 2nd Edition
 #   Written for Classic Python 3.9.4
 #
 #############################################################
 
 """
-TravCalc 3.1.0 Beta for Mongoose Traveller 2nd Edition
+PyTravCalc 3.1.0 Beta for Mongoose Traveller 2nd Edition
 ------------------------------------------------------
 
 This program rolls dice and calculates their effects.
@@ -37,7 +37,7 @@ from matplotlib import font_manager
 import logging
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'TravCalc 3.1.0 (Beta)'
+__app__ = 'PyTravCalc 3.1.0 (Beta)'
 __version__ = '3.1.0b'
 
 #form_class = uic.loadUiType("mainwindow_310b.ui")[0]
@@ -97,7 +97,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionVisit_Blog.triggered.connect(self.Visit_Blog)
         self.actionFeedback.triggered.connect(self.Feedback)
         self.actionOverview.triggered.connect(self.Overview_menu)
-        self.actionAbout_TravCalc.triggered.connect(self.actionAbout_triggered)
+        self.actionAbout_PyTravCalc.triggered.connect(self.actionAbout_triggered)
         self.actionQuit.triggered.connect(self.quitButton_clicked)
         self.inputtasks.valueChanged.connect(self.inputtasks_value_Changed)
         self.inputchar.valueChanged.connect(self.inputchar_valueChanged)
@@ -1247,19 +1247,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 if __name__ == '__main__':
 
-#     logging.basicConfig(filename = 'TravCalc.log',
+#     logging.basicConfig(filename = 'PyTravCalc.log',
 #                         level = logging.DEBUG,
 #                         format = '%(asctime)s %(levelname)s %(name)s - %(message)s',
 #                         datefmt='%a, %d %b %Y %H:%M:%S',
 #                         filemode = 'w')
 
-    log = logging.getLogger('TravCalc310b')
+    log = logging.getLogger('PyTravCalc310b')
     log.setLevel(logging.DEBUG)
 
     if not os.path.exists('Logs'):
         os.mkdir('Logs')
     
-    fh = logging.FileHandler('Logs/TravCalc.log', 'w')
+    fh = logging.FileHandler('Logs/PyTravCalc.log', 'w')
  
     formatter = logging.Formatter('%(asctime)s %(levelname)s %(name)s - %(message)s',
                                   datefmt = '%a, %d %b %Y %H:%M:%S')
