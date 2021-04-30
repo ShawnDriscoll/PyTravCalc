@@ -1296,7 +1296,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         '''
         open this app's PDF manual
         '''
+        log.info(__app__ + ' looking for PDF manual...')
         os.startfile('pytravcalc_manual.pdf')
+        log.info(__app__ + ' found PDF manual. Opening...')
         
     def actionAbout_triggered(self):
         '''
