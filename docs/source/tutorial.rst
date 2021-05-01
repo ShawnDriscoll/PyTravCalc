@@ -43,10 +43,19 @@ A graph of the **Outcome** will then be displayed.
 
 Making a Damage Roll
 --------------------
-The **D** and **DD** rolls calculate the "soaking" of damage against armor. **Armor** amount is entered, along with hidden **Cover** amount and **AP** amount. The number of dice is selected. And a **DM** can be added before clicking either the **D** or **DD** roll buttons. The effect will be added to **D** rolls.
+The normal damage **D** and destructive damage **DD** rolls calculate the "soaking" of damage against armor. **Armor** score is entered, along with hidden **Cover** amount and **AP** score. The number of dice is selected. And a **DM** can be added before clicking either the **D** or **DD** roll buttons. Any effect will be added to **D** rolls only.
 
 The **Clear** button will reset the damage area.
 The **Clear All** button will reset all the areas.
+
+
+Manually Inputting Rolls
+------------------------
+Here you are not limited to just Traveller rolls. You can enter other rolls for other kinds of dice used in other games. **PyTravCalc** will keep a history of the rolls that you enter.
+
+The **Clear** button will reset the roll history.
+
+Check the included ``PyDiceroll.pdf`` manual to see what other kinds of rolls **PyTravCalc** can perfrom.
 
 
 Settings Menu

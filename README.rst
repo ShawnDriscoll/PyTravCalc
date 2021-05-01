@@ -1,7 +1,7 @@
 .. image:: docs/source/python_v3_9_4_tag.png
     :target: https://www.python.org/download/releases/3.9.4/
     
-.. image:: docs/source/release_v3_1_0b_tag.png
+.. image:: docs/source/release_v3_1_5b_tag.png
     :target: https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
     
 .. image:: https://readthedocs.org/projects/pytravcalcmanual/badge/?version=latest
@@ -10,19 +10,19 @@
 
 
 
-**PyTravCalc 3.1.0b**
+**PyTravCalc 3.1.5b**
 ===================
 
 .. figure:: images/pytravcalc_manual_cover_art.png
 
 
-**PyTravCalc 3.1.0b** is a Windows program for calculating die rolls for Mongoose Traveller 2nd Edition.
+**PyTravCalc 3.1.5b** is a Windows program for calculating die rolls for Mongoose Traveller 2nd Edition.
 
 
 Notes
 -----
 
-**PyTravCalc 3.1.0b** is being tested on Windows 10.
+**PyTravCalc 3.1.5b** is being tested on Windows 10.
 
 New in this release is that it's compatible with Python 3.9 and PyQt5.
 
