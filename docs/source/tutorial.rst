@@ -9,26 +9,29 @@ After the program starts, there should be a screen that looks like:
 
 The screen contains various outlined areas that are labeled as:
 
-   | **Task:**
+   | **Task**
    | Choose the difficulty and die-modifiers for a task.
    |
-   | **Roll:**
+   | **Manual Input**
+   | Enter various die rolls using the keyboard. A history will be kept.
+   |
+   | **Roll**
    | Choose the roll type to perform.
    |
-   | **Damage:**
+   | **Damage**
    | Calculate a damage roll.
    |
-   | **Outcome:**
+   | **Outcome**
    | Displays a plotted graph of the roll chances, and of the roll result if a difficulty is chosen.
 
 .. note::
 
-   Plotted graphs are generated only when difficulties are selected. **D66** rolls will never generate graphs.
+   Plotted graphs are generated only when difficulties are selected. **D66** and manually inputted rolls will never generate graphs.
    
 
 Making a Task Roll
 ------------------
-Typically, task rolls will have a difficulty chosen by the game's referee. The player simply clicks the **Task Difficulty** button and clicks on the difficulty level. This will unlock the rest of the **Task** area that the player can fill in as well. It's pretty much self-explanatory how the rest is filled in. It is assumed that the player has a characteristic and a skill in mind when changing these values.
+Typically, task rolls will have a difficulty chosen by the game's referee. The player simply clicks the **Task Difficulty** button and chooses a difficulty level. This will unlock the rest of the **Task** area that the player can fill in as well. It's pretty much self-explanatory how the rest is filled in. It is assumed that the player has a characteristic and a skill in mind when changing these values.
 
 .. note::
 
@@ -54,8 +57,9 @@ Manually Inputting Rolls
 Here you are not limited to just Traveller rolls. You can enter other rolls for other kinds of dice used in other games. **PyTravCalc** will keep a history of the rolls that you enter.
 
 The **Clear** button will reset the roll history.
+The **Clear All** button will reset all the areas.
 
-Check the included ``PyDiceroll.pdf`` manual to see what other kinds of rolls **PyTravCalc** can perfrom.
+Check the included ``PyDiceroll.pdf`` manual to see what other kinds of rolls **PyTravCalc** can perform manually.
 
 
 Settings Menu
@@ -65,4 +69,4 @@ Voice styles (yes, voice styles) can be selected from the **Audio** menu.
 
 .. note::
    
-   Only the **female voice** works with general die rolls (rolls made without a **Task Difficulty**).
+   Only the **female voice** works with general die rolls (rolls made without a **Task Difficulty**). Any manually inputted rolls will not be voiced.
