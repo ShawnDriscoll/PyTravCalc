@@ -45,11 +45,11 @@ __expired_tag__ = False
 #form_class = uic.loadUiType("mainwindow_315b.ui")[0]
 
 class aboutDialog(QDialog, Ui_aboutDialog):
-    def __init__(self, parent=None):
+    def __init__(self):
         '''
         Open the About dialog window
         '''
-        QDialog.__init__(self, parent)
+        super().__init__()
         log.info('PyQt5 aboutDialog initializing...')
         self.setWindowFlags(Qt.Drawer | Qt.WindowStaysOnTopHint)
         self.setupUi(self)
@@ -64,11 +64,11 @@ class aboutDialog(QDialog, Ui_aboutDialog):
         self.close()
 
 class alertDialog(QDialog, Ui_alertDialog):
-    def __init__(self, parent=None):
+    def __init__(self):
         '''
         Open the Alert dialog window
         '''
-        QDialog.__init__(self, parent)
+        super().__init__()
         log.info('PyQt5 alertDialog initializing...')
         self.setWindowFlags(Qt.Drawer | Qt.WindowStaysOnTopHint)
         self.setupUi(self)
@@ -84,13 +84,13 @@ class alertDialog(QDialog, Ui_alertDialog):
 
 #class MainWindow(QMainWindow, form_class):
 class MainWindow(QMainWindow, Ui_MainWindow):
-    def __init__(self, parent=None):
+    def __init__(self):
         '''
         Display the main app window.
         Connect all the buttons to their functions.
         Initialize their value ranges.
         '''
-        QMainWindow.__init__(self, parent)
+        super().__init__()
         log.info('PyQt5 MainWindow initializing...')
         self.setupUi(self)
         self.roll2D_Button.clicked.connect(self.roll2D_buttonClicked)
@@ -1401,8 +1401,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         A roll was inputed manually
         '''
         log.debug('Manually entered')
-        entered_roll = self.rollInput.text()
-        returned_line = entered_roll + ' = ' + str(roll(entered_roll))
+        dice_entered = self.rollInput.text()
+        roll_returned = roll(dice_entered)
+        if roll_returned == -9999:
+            returned_line = dice_entered + ' = ' + '<span style=" color:#ff0000;">' + str(roll_returned) + '</span>'
+        else:
+            returned_line = dice_entered + ' = ' + str(roll_returned)
         self.rollBrowser.append(returned_line)
 
     def clearRollHistoryClicked(self):
@@ -1596,7 +1600,7 @@ if __name__ == '__main__':
     
     mainApp = MainWindow()
     mainApp.show()
-    
+
     # app.setPalette(darkPalette)
 
     #CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
