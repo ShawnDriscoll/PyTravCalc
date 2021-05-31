@@ -1,5 +1,5 @@
 .. image:: docs/source/python_v3_9_4_tag.png
-    :target: https://www.python.org/downloads/release/3.9.4/
+    :target: https://www.python.org/downloads/release/python-394/
     
 .. image:: docs/source/release_v3_1_5b_tag.png
     :target: https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
