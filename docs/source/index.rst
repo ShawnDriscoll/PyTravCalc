@@ -14,7 +14,7 @@ its `GitHub
 This documentation explains how to install and use **PyTravCalc** for die roll calculations.
 
 .. image:: python_v3_9_4_tag.png
-    :target: https://www.python.org/download/releases/3.9.4/
+    :target: https://www.python.org/downloads/release/python-394/
     
 .. image:: release_v3_1_5b_tag.png
 
