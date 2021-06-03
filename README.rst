@@ -1,5 +1,5 @@
-.. image:: docs/source/python_v3_9_4_tag.png
-    :target: https://www.python.org/downloads/release/python-394/
+.. image:: docs/source/python_v3_9_5_tag.png
+    :target: https://www.python.org/downloads/release/python-395/
     
 .. image:: docs/source/release_v3_1_5b_tag.png
     :target: https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
@@ -39,10 +39,10 @@ Requirements
 
    It might not work in OSX or Linux.
 
-* **Python 3.9**
+* **Python 3.9.5**
    
    **PyTravCalc** was written using the C implementation of Python
-   version 3.9.4. Also known as CPython.
+   version 3.9.5. Also known as CPython.
 
 * **colorama 0.4.4**
 
