@@ -28,16 +28,16 @@ Requirements
    **PyTravCalc** is being tested on Windows 10.
    It has not been tested on MacOS or Linux.
    
-* **Python 3.9**
+* **Python 3.9.5**
    
    **PyTravCalc** was written using the C implementation of Python
-   version 3.9.4. Also known as CPython.
+   version 3.9.5. Also known as CPython.
 
 * **colorama 0.4.4**
 
    Because CMD may have some colored text messages for debugging invalid die rolls.
    
-* **PyQt5 5.15.2**
+* **PyQt5 5.15.4**
 
    PyQt5 is the framework used for displaying the Window GUI and buttons, etc.
 
