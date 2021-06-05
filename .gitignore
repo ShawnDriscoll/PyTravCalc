@@ -9,7 +9,6 @@ Logs/
 #############
 ## Windows
 #############
-
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -23,9 +22,10 @@ Desktop.ini
 ############
 __pycache__/
 
-#################
-# Python Packages
-#################
+
+##################
+## Python Packages
+##################
 *.egg
 *.egg-info
 eggs/
@@ -39,7 +39,7 @@ develop-eggs/
 ############
 ## Jython
 ############
-*.class
+*$py.class
 
 
 #############
@@ -51,5 +51,12 @@ temp/
 ##############
 ## Qt Designer
 ##############
-*.ui
-*.qrc
+#*.ui
+#*.qrc
+
+
+##############
+## PyInstaller
+##############
+*.spec
+build/
