@@ -45,7 +45,7 @@ Requirements
 
    For building arrays.
 
-* **matplotlib 3.4.1**
+* **matplotlib 3.4.2**
 
    For graphics plotting.
    

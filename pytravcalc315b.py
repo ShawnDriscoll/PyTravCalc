@@ -78,6 +78,7 @@ class alertDialog(QDialog, Ui_alertDialog):
         log.info('PyQt5 alertDialog closing...')
         self.close()
 
+#class MainWindow(QMainWindow):
 #class MainWindow(QMainWindow, form_class):
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -87,6 +88,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Initialize their value ranges.
         '''
         super().__init__()
+        
+        #uic.loadUi("mainwindow_315b.ui", self)
+        
         log.info('PyQt5 MainWindow initializing...')
         self.setupUi(self)
         self.roll2D_Button.clicked.connect(self.roll2D_buttonClicked)
@@ -1562,7 +1566,7 @@ if __name__ == '__main__':
 
     log.info(__app__ + ' started, and running...')
 
-    if trange[0] > 2021 or trange[1] > 9:
+    if trange[0] > 2021 or trange[1] > 10:
         __expired_tag__ = True
         __app__ += ' [EXPIRED]'
 
