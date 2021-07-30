@@ -11,7 +11,7 @@
 
 
 **PyTravCalc 3.1.5b**
-===================
+=====================
 
 .. figure:: images/pytravcalc_manual_cover_art.png
 
