@@ -18,5 +18,5 @@ Running PyTravCalc
 If you have Python 3.9.5 installed, you can start ``pytravcalc315b.py`` from a CMD prompt or double-click
 the Python script.
 
-Alternatively, if you do not have Python 3.9.5, you can start ``pytravcalc315b.exe`` (located in the
-dist folder) from a CMD prompt or by double-clicking the executable program.
+Alternatively, if you do not have Python 3.9.5, you can start ``pytravcalc315b.exe`` from a CMD prompt or by double-clicking
+the executable program.
