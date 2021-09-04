@@ -51,3 +51,9 @@ Requirements
    
 .. Warning::
    **PyTravCalc** will not work with **Python 2.7-**.
+   
+
+Not Using Python?
+-----------------
+
+You can always run the .EXE version for Windows 10 if you don't have the Python language installed.

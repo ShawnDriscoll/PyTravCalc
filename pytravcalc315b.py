@@ -1566,7 +1566,8 @@ if __name__ == '__main__':
 
     log.info(__app__ + ' started, and running...')
 
-    if trange[0] > 2021 or trange[1] > 10:
+    #if trange[0] > 2022 or trange[1] > 8:
+    if trange[0] > 2022:
         __expired_tag__ = True
         __app__ += ' [EXPIRED]'
 

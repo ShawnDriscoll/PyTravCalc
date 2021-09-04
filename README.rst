@@ -66,6 +66,13 @@ Warning
 
 **PyTravCalc** will not work with **Python 2.7-**.
 
+
+Not Using Python?
+-----------------
+
+You can always run the .EXE version for Windows 10 if you don't have the Python language installed.
+
+
 The Traveller game in all forms is owned by Far Future Enterprises. Copyright 1977 - 2021 Far Future Enterprises. Traveller is a registered trademark of Far Future Enterprises.
 
 Contact
