@@ -286,7 +286,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             '''
             Beta for this app has expired!
             '''
-            log.warning(__app__ + ' detected...')
+            log.warning(__app__ + ' expiration detected...')
             self.alert_window()
             '''
             display alert message and disable all the things
@@ -1092,6 +1092,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.muted = False
         self.actionPlaySample.setDisabled(self.muted)
         self.actionMute.setDisabled(self.muted)
+        log.debug('Male voice selected')
 
     def FemaleVoice_menu(self):
         '''
@@ -1109,6 +1110,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.muted = False
         self.actionPlaySample.setDisabled(self.muted)
         self.actionMute.setDisabled(self.muted)
+        log.debug('Female voice selected')
 
     def RobotVoice_menu(self):
         '''
@@ -1126,6 +1128,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.muted = False
         self.actionPlaySample.setDisabled(self.muted)
         self.actionMute.setDisabled(self.muted)
+        log.debug('Robot voice selected')
 
     def PlaySample_menu(self):
         m_media.setMedia(MM.QMediaContent(QUrl('qrc:/sounds/' + self.voice_type + '_travcalc.mp3')))
@@ -1147,6 +1150,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionMaleVoice.setDisabled(self.male_voice)
         self.actionFemaleVoice.setDisabled(self.female_voice)
         self.actionRobotVoice.setDisabled(self.robot_voice)
+        log.debug('Muted voice')
         
     def StandardDice_menu(self):
         '''
@@ -1171,6 +1175,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 's'
+        log.debug('Standard dice selected')
         
     def TravellerDice_menu(self):
         '''
@@ -1195,6 +1200,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 't'
+        log.debug('Traveller dice selected')
 
     def AKODice_menu(self):
         '''
@@ -1219,6 +1225,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'a'
+        log.debug('AKO dice selected')
 
     def MetalDice_menu(self):
         '''
@@ -1243,6 +1250,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'm'
+        log.debug('Metal dice selected')
 
     def CUBBLEDice_menu(self):
         '''
@@ -1267,6 +1275,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'c'
+        log.debug('CUBBLE dice selected')
         
     def RomanDice_menu(self):
         '''
@@ -1291,6 +1300,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'r'
+        log.debug('Roman dice selected')
         
     def GridGrooveDice_menu(self):
         '''
@@ -1315,6 +1325,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'g'
+        log.debug('Grid Groove dice selected')
     
     def QuestionDice_menu(self):
         '''
@@ -1339,6 +1350,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'q'
+        log.debug('Question dice selected')
         
     def MixedDice_menu(self):
         '''
@@ -1361,6 +1373,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = ''
+        log.debug('Mixed dice selected')
         
     def Visit_Blog(self):
         '''
@@ -1421,7 +1434,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         '''
         open the Alert window
         '''
-        log.warning(__app__ + ' show Beta expired Alert...')
+        log.warning(__app__ + ' show Beta expired PyQt5 alertDialog...')
         self.popAlertDialog.show()
 
     def quitButton_clicked(self):
