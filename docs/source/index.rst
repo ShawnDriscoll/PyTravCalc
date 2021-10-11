@@ -32,8 +32,8 @@ Future Enterprises.
 
    introduction
    installing
-   tutorial
    what_is_new
+   tutorial
    license
    ffe
    about_the_author
