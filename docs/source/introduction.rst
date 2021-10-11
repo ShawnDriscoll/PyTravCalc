@@ -28,10 +28,10 @@ Requirements
    **PyTravCalc** is being tested on Windows 10.
    It has not been tested on MacOS or Linux.
    
-* **Python 3.9.5**
+* **Python 3.9.7**
    
    **PyTravCalc** was written using the C implementation of Python
-   version 3.9.5. Also known as CPython.
+   version 3.9.7. Also known as CPython.
 
 * **colorama 0.4.4**
 
