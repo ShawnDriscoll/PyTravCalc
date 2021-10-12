@@ -32,6 +32,9 @@ Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/download
 
 or the EPUB from https://readthedocs.org/projects/pytravcalcmanual/downloads/epub/latest
 
+.. image:: docs/source/video.png
+    :target: https://www.youtube.com/watch?v=AlhrqA2jdgs
+
 Requirements
 ------------
 
