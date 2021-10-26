@@ -1,6 +1,6 @@
 #
 #   PyTravCalc 3.2.0 Beta for Mongoose Traveller 2nd Edition
-#   Written for Classic Python 3.9.7
+#   Written for Python 3.9.7
 #
 ##############################################################
 
