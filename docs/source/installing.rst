@@ -15,8 +15,8 @@ does not have them.
 
 Running PyTravCalc
 ------------------
-If you have Python 3.9.7 installed, you can start ``pytravcalc320b.py`` from a CMD prompt or double-click
+If you have Python 3.9.7 installed, you can start ``pytravcalc321b.py`` from a CMD prompt or double-click
 the Python script.
 
-Alternatively, if you do not have Python 3.9.7, you can start ``pytravcalc320b.exe`` from a CMD prompt or by double-clicking
+Alternatively, if you do not have Python 3.9.7, you can start ``pytravcalc321b.exe`` from a CMD prompt or by double-clicking
 the executable program.

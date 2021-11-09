@@ -16,7 +16,7 @@ This documentation explains how to install and use **PyTravCalc** for die roll c
 .. image:: python_v3_9_7_tag.png
     :target: https://www.python.org/downloads/release/python-397/
     
-.. image:: release_v3_2_0b_tag.png
+.. image:: release_v3_2_1b_tag.png
 
 .. image:: https://readthedocs.org/projects/pytravcalcmanual/badge/?version=latest
     :target: http://pytravcalcmanual.readthedocs.io/en/latest/?badge=latest
