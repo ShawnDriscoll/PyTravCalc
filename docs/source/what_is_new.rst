@@ -16,7 +16,7 @@ Or the short form:
 
 .. note::
 
-    Typing ``PyTravCalc320b.py -h`` will provide some help.
+    Typing ``PyTravCalc.py -h`` will provide some help.
 
 
 New in PyTravCalc 3.1.5
