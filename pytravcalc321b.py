@@ -22,9 +22,9 @@ from PyQt5.QtWidgets import *
 #from PyQt5 import uic
 import PyQt5.QtMultimedia as MM
 import time
-from mainwindow_321b import Ui_MainWindow
-from aboutdialog_321b import Ui_aboutDialog
-from alertdialog_321b import Ui_alertDialog
+from mainwindow import Ui_MainWindow
+from aboutdialog import Ui_aboutDialog
+from alertdialog import Ui_alertDialog
 from random import randint
 from rpg_tools.PyDiceroll import roll
 import sys
@@ -39,7 +39,7 @@ __version__ = '3.2.1b'
 __py_version__ = '3.9.7'
 __expired_tag__ = False
 
-#form_class = uic.loadUiType("mainwindow_321b.ui")[0]
+#form_class = uic.loadUiType("mainwindow.ui")[0]
 
 class aboutDialog(QDialog, Ui_aboutDialog):
     def __init__(self):
@@ -90,7 +90,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         '''
         super().__init__()
         
-        #uic.loadUi("mainwindow_321b.ui", self)
+        #uic.loadUi("mainwindow.ui", self)
         
         log.info('PyQt5 MainWindow initializing...')
         self.setupUi(self)

@@ -62,3 +62,10 @@ temp/
 *.spec
 build/
 dist/
+
+
+##########
+## Folders
+##########
+images/
+sounds/

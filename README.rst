@@ -13,7 +13,7 @@
 **PyTravCalc 3.2.1b**
 =====================
 
-.. figure:: images/pytravcalc_manual_cover_art.png
+.. figure:: pytravcalc_manual_cover_art.png
 
 
 **PyTravCalc 3.2.1b** is a Windows program for calculating die rolls for Mongoose Traveller 2nd Edition.
