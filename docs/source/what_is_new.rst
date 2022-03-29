@@ -1,5 +1,11 @@
-**What's New with PyTravCalc 3.2?**
+**What's New with PyTravCalc 3.3?**
 ===================================
+
+New in PyTravCalc 3.3.0
+-----------------------
+
+Ugly yellow dice have been added to the dice selection.
+
 
 New in PyTravCalc 3.2.0
 -----------------------

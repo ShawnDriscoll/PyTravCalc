@@ -1,7 +1,7 @@
-.. image:: docs/source/python_v3_9_7_tag.png
-    :target: https://www.python.org/downloads/release/python-397/
+.. image:: docs/source/python_v3_9_11_tag.png
+    :target: https://www.python.org/downloads/release/python-3911/
     
-.. image:: docs/source/release_v3_2_1b_tag.png
+.. image:: docs/source/release_v3_3_0b_tag.png
     :target: https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
     
 .. image:: https://readthedocs.org/projects/pytravcalcmanual/badge/?version=latest
@@ -10,19 +10,19 @@
 
 
 
-**PyTravCalc 3.2.1b**
+**PyTravCalc 3.3.0b**
 =====================
 
 .. figure:: pytravcalc_manual_cover_art.png
 
 
-**PyTravCalc 3.2.1b** is a Windows program for calculating die rolls for Mongoose Traveller 2nd Edition.
+**PyTravCalc 3.3.0b** is a Windows program for calculating die rolls for Mongoose Traveller 2nd Edition.
 
 
 Notes
 -----
 
-**PyTravCalc 3.2.1b** is being tested on Windows 10.
+**PyTravCalc 3.3.0b** is being tested on Windows 10.
 
 New in this release is that it can make dice rolls at a CMD prompt.
 
@@ -46,10 +46,10 @@ Requirements
 
    It might not work in OSX or Linux.
 
-* **Python 3.9.7**
+* **Python 3.9.11**
    
    **PyTravCalc** was written using the C implementation of Python
-   version 3.9.7. Also known as CPython.
+   version 3.9.11. Also known as CPython.
 
 * **colorama 0.4.4**
 

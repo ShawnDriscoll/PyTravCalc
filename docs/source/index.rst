@@ -4,7 +4,7 @@
 =====================
 
 **PyTravCalc** is a Windows program for calculating die rolls for Mongoose Traveller
-2nd Edition. It's written in Python 3.9.7 and includes **PyDiceroll 3.4** for
+2nd Edition. It's written in Python 3.9.11 and includes **PyDiceroll 3.4** for
 its die rolling. Source for **PyDiceroll 3.4** can be found at
 its `GitHub
 <https://github.com/ShawnDriscoll/pydiceroll/>`__ repository.
@@ -13,10 +13,10 @@ its `GitHub
 
 This documentation explains how to install and use **PyTravCalc** for die roll calculations.
 
-.. image:: python_v3_9_7_tag.png
-    :target: https://www.python.org/downloads/release/python-397/
+.. image:: python_v3_9_11_tag.png
+    :target: https://www.python.org/downloads/release/python-3911/
     
-.. image:: release_v3_2_1b_tag.png
+.. image:: release_v3_3_0b_tag.png
 
 .. image:: https://readthedocs.org/projects/pytravcalcmanual/badge/?version=latest
     :target: http://pytravcalcmanual.readthedocs.io/en/latest/?badge=latest
