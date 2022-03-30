@@ -33,6 +33,12 @@ Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/download
 or the EPUB from https://readthedocs.org/projects/pytravcalcmanual/downloads/epub/latest
 
 
+What's New in 3.3?
+------------------
+
+.. image:: docs/source/video2.png
+    :target: https://www.youtube.com/watch?v=gFvSPnIXNbo
+
 What's New?
 -----------
 
