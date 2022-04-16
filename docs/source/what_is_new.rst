@@ -1,5 +1,10 @@
-**What's New with PyTravCalc 3.3?**
+**What's New with PyTravCalc 3.4?**
 ===================================
+
+New in PyTravCalc 3.4.0
+-----------------------
+
+SHONNER dice have been added to the dice selection.
 
 New in PyTravCalc 3.3.0
 -----------------------

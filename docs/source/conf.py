@@ -43,9 +43,9 @@ author = 'Shawn Driscoll'
 # other places throughout the built documents.
 #
 # The short X.Y version.
-version = '3.3'
+version = '3.4'
 # The full version, including alpha/beta/rc tags.
-release = '3.3.0b'
+release = '3.4.0b'
 #release = '(2nd Edition)'
 
 # There are two options for replacing |today|: either, you set today to some
@@ -101,7 +101,7 @@ html_theme = 'sphinx_rtd_theme'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-html_title = 'PyTravCalc 3.3 Manual'
+html_title = 'PyTravCalc 3.4 Manual'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -172,7 +172,7 @@ latex_font_size = '12pt'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, document class [howto/manual]).
 latex_documents = [
-  ('index', 'pytravcalcmanual.tex', 'PyTravCalc 3.3 Manual', 'Shawn Driscoll', 'manual'),
+  ('index', 'pytravcalcmanual.tex', 'PyTravCalc 3.4 Manual', 'Shawn Driscoll', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

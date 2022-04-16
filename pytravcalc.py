@@ -1,11 +1,11 @@
 #
-#   PyTravCalc 3.3.0 Beta for Mongoose Traveller 2nd Edition
+#   PyTravCalc 3.4.0 Beta for Mongoose Traveller 2nd Edition
 #   Written for Python 3.9.11
 #
 ##############################################################
 
 """
-PyTravCalc 3.3.0 Beta for Mongoose Traveller 2nd Edition
+PyTravCalc 3.4.0 Beta for Mongoose Traveller 2nd Edition
 --------------------------------------------------------
 
 This program rolls 6-sided dice and calculates their effects.
@@ -34,8 +34,8 @@ from matplotlib import font_manager
 import logging
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'PyTravCalc 3.3.0 Beta'
-__version__ = '3.3.0b'
+__app__ = 'PyTravCalc 3.4.0 Beta'
+__version__ = '3.4.0b'
 __py_version__ = '3.9.11'
 __expired_tag__ = False
 
@@ -125,6 +125,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRomanDice.triggered.connect(self.RomanDice_menu)
         self.actionGridGrooveDice.triggered.connect(self.GridGrooveDice_menu)
         self.actionYellowDice.triggered.connect(self.YellowDice_menu)
+        self.actionSHONNERDice.triggered.connect(self.SHONNERDice_menu)
         self.actionQuestionDice.triggered.connect(self.QuestionDice_menu)
         self.actionMixedDice.triggered.connect(self.MixedDice_menu)
         self.actionVisit_Blog.triggered.connect(self.Visit_Blog)
@@ -232,10 +233,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.roman_dice = False
         self.gridgroove_dice = False
         self.yellow_dice = False
+        self.shonner_dice = False
         
-        # The set the dice type to match the die chosen
-        self.dice_type ='a'
-        self.dice_list = ['s', 't', 'a', 'm', 'c', 'r', 'g', 'y']
+        # Set the dice type to match the die chosen
+        self.dice_type ='ak'
+        self.dice_list = ['st', 'tr', 'ak', 'me', 'cu', 'ro', 'gg', 'ye', 'sh']
         self.question_dice = False
         self.mixed_dice = False
 
@@ -275,6 +277,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRomanDice.setDisabled(self.roman_dice)
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
 
@@ -322,6 +325,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.actionRomanDice.setDisabled(True)
             self.actionGridGrooveDice.setDisabled(True)
             self.actionYellowDice.setDisabled(True)
+            self.actionSHONNERDice.setDisabled(True)
             self.actionMixedDice.setDisabled(True)
             self.actionQuestionDice.setDisabled(True)
             self.actionMute.setDisabled(True)
@@ -1169,6 +1173,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.roman_dice = False
         self.gridgroove_dice = False
         self.yellow_dice = False
+        self.shonner_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1179,9 +1184,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRomanDice.setDisabled(self.roman_dice)
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 's'
+        self.dice_type = 'st'
         log.debug('Standard dice selected')
         
     def TravellerDice_menu(self):
@@ -1196,6 +1202,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.roman_dice = False
         self.gridgroove_dice = False
         self.yellow_dice = False
+        self.shonner_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1206,9 +1213,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRomanDice.setDisabled(self.roman_dice)
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 't'
+        self.dice_type = 'tr'
         log.debug('Traveller dice selected')
 
     def AKODice_menu(self):
@@ -1223,6 +1231,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.roman_dice = False
         self.gridgroove_dice = False
         self.yellow_dice = False
+        self.shonner_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1233,9 +1242,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRomanDice.setDisabled(self.roman_dice)
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'a'
+        self.dice_type = 'ak'
         log.debug('AKO dice selected')
 
     def MetalDice_menu(self):
@@ -1250,6 +1260,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.roman_dice = False
         self.gridgroove_dice = False
         self.yellow_dice = False
+        self.shonner_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1260,9 +1271,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRomanDice.setDisabled(self.roman_dice)
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'm'
+        self.dice_type = 'me'
         log.debug('Metal dice selected')
 
     def CUBBLEDice_menu(self):
@@ -1277,6 +1289,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.roman_dice = False
         self.gridgroove_dice = False
         self.yellow_dice = False
+        self.shonner_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1287,9 +1300,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRomanDice.setDisabled(self.roman_dice)
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'c'
+        self.dice_type = 'cu'
         log.debug('CUBBLE dice selected')
         
     def RomanDice_menu(self):
@@ -1304,6 +1318,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.roman_dice = True
         self.gridgroove_dice = False
         self.yellow_dice = False
+        self.shonner_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1314,9 +1329,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRomanDice.setDisabled(self.roman_dice)
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'r'
+        self.dice_type = 'ro'
         log.debug('Roman dice selected')
         
     def GridGrooveDice_menu(self):
@@ -1331,6 +1347,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.roman_dice = False
         self.gridgroove_dice = True
         self.yellow_dice = False
+        self.shonner_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1341,9 +1358,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRomanDice.setDisabled(self.roman_dice)
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'g'
+        self.dice_type = 'gg'
         log.debug('Grid Groove dice selected')
     
     def YellowDice_menu(self):
@@ -1358,6 +1376,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.roman_dice = False
         self.gridgroove_dice = False
         self.yellow_dice = True
+        self.shonner_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1368,10 +1387,40 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRomanDice.setDisabled(self.roman_dice)
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'y'
+        self.dice_type = 'ye'
         log.debug('Yellow dice selected')
+    
+    def SHONNERDice_menu(self):
+        '''
+        set flags for SHONNER dice use
+        '''
+        self.standard_dice = False
+        self.traveller_dice = False
+        self.ako_dice = False
+        self.metal_dice = False
+        self.cubble_dice = False
+        self.roman_dice = False
+        self.gridgroove_dice = False
+        self.yellow_dice = False
+        self.shonner_dice = True
+        self.question_dice = False
+        self.mixed_dice = False
+        self.actionStandardDice.setDisabled(self.standard_dice)
+        self.actionTravellerDice.setDisabled(self.traveller_dice)
+        self.actionAKODice.setDisabled(self.ako_dice)
+        self.actionMetalDice.setDisabled(self.metal_dice)
+        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
+        self.actionRomanDice.setDisabled(self.roman_dice)
+        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
+        self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionQuestionDice.setDisabled(self.question_dice)
+        self.actionMixedDice.setDisabled(self.mixed_dice)
+        self.dice_type = 'sh'
+        log.debug('SHONNER dice selected')
 
     def QuestionDice_menu(self):
         '''
@@ -1385,6 +1434,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.roman_dice = False
         self.gridgroove_dice = False
         self.yellow_dice = False
+        self.shonner_dice = False
         self.question_dice = True
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1395,9 +1445,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRomanDice.setDisabled(self.roman_dice)
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'q'
+        self.dice_type = 'qu'
         log.debug('Question dice selected')
         
     def MixedDice_menu(self):
@@ -1412,6 +1463,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.roman_dice = False
         self.gridgroove_dice = False
         self.yellow_dice = False
+        self.shonner_dice = False
         self.question_dice = False
         self.mixed_dice = True
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1422,6 +1474,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionRomanDice.setDisabled(self.roman_dice)
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = ''
@@ -1634,7 +1687,7 @@ if __name__ == '__main__':
     
     if len(sys.argv) < 2:
 
-        if trange[0] > 2022 or trange[1] > 6:
+        if trange[0] > 2022 or trange[1] > 7:
             __expired_tag__ = True
             __app__ += ' [EXPIRED]'
 
@@ -1678,7 +1731,7 @@ if __name__ == '__main__':
 
         app.exec_()
     
-    elif trange[0] > 2022 or trange[1] > 6:
+    elif trange[0] > 2022 or trange[1] > 7:
         __app__ += ' [EXPIRED]'
         '''
         Beta for this app has expired!
@@ -1690,10 +1743,10 @@ if __name__ == '__main__':
     elif sys.argv[1] in ['-h', '/h', '--help', '-?', '/?']:
         print()
         print('     Using the CMD prompt to make dice rolls:')
-        print("     C:\>PyTravCalc321b.py roll('2d6')")
+        print("     C:\>PyTravCalc.py roll('2d6')")
         print()
         print('     Or just:')
-        print('     C:\>PyTravCalc321b.py 2d6')
+        print('     C:\>PyTravCalc.py 2d6')
     elif sys.argv[1] in ['-v', '/v', '--version']:
         print()
         print('     PyTravCalc, release version ' + __version__ + ' for Python ' + __py_version__)
