@@ -1,6 +1,11 @@
 **What's New with PyTravCalc 3.4?**
 ===================================
 
+New in PyTravCalc 3.4.1
+-----------------------
+
+The older integer division has been depricated.
+
 New in PyTravCalc 3.4.0
 -----------------------
 

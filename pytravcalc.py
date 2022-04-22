@@ -1,11 +1,11 @@
 #
-#   PyTravCalc 3.4.0 Beta for Mongoose Traveller 2nd Edition
+#   PyTravCalc 3.4.1 Beta for Mongoose Traveller 2nd Edition
 #   Written for Python 3.9.11
 #
 ##############################################################
 
 """
-PyTravCalc 3.4.0 Beta for Mongoose Traveller 2nd Edition
+PyTravCalc 3.4.1 Beta for Mongoose Traveller 2nd Edition
 --------------------------------------------------------
 
 This program rolls 6-sided dice and calculates their effects.
@@ -34,8 +34,8 @@ from matplotlib import font_manager
 import logging
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'PyTravCalc 3.4.0 Beta'
-__version__ = '3.4.0b'
+__app__ = 'PyTravCalc 3.4.1 Beta'
+__version__ = '3.4.1b'
 __py_version__ = '3.9.11'
 __expired_tag__ = False
 
@@ -441,7 +441,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.NewNumTasks = 1
             self.inputtasks.setValue(self.NewNumTasks)
         self.PreviousNumTasks = self.NewNumTasks
-        self.selDiff.setCurrentIndex(self.target_num / 2)
+        self.selDiff.setCurrentIndex(self.target_num // 2)
         log.debug('Number of tasks being performed: %d' % self.NewNumTasks)
 
     def selTimeframe_valueChanged(self):
