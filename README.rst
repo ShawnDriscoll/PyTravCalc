@@ -24,8 +24,6 @@ Notes
 
 **PyTravCalc 3.4.1b** is being tested on Windows 10.
 
-New in this release is that it can make dice rolls at a CMD prompt.
-
 Read the **PyTravCalc Manual** at http://pytravcalcmanual.readthedocs.io
 
 Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
