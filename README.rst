@@ -8,6 +8,8 @@
     :target: http://pytravcalcmanual.readthedocs.io/en/latest/?badge=latest
     :alt: Doc Status
 
+.. image:: https://img.shields.io/github/stars/ShawnDriscoll/PyTravCalc.svg
+    :target: https://github.com/ShawnDriscoll/PyTravCalc/stargazers
 
 
 **PyTravCalc 3.4.1b**
