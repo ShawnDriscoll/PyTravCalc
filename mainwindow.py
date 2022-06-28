@@ -983,7 +983,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "PyTravCalc 3.4.1 (Beta)"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "PyTravCalc 3.5.0 (Beta)"))
         self.taskBox.setTitle(_translate("MainWindow", "Task"))
         self.effectlabel.setText(_translate("MainWindow", "Effect"))
         self.effect_result.setToolTip(_translate("MainWindow", "Task effect"))

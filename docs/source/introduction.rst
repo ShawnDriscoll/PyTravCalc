@@ -32,10 +32,6 @@ Requirements
    
    **PyTravCalc** was written using the C implementation of Python
    version 3.9.11. Also known as CPython.
-
-* **colorama 0.4.4**
-
-   Because CMD may have some colored text messages for debugging invalid die rolls.
    
 * **PyQt5 5.15.4**
 

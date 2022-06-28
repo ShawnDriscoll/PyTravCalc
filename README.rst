@@ -1,7 +1,7 @@
 .. image:: docs/source/python_v3_9_11_tag.png
     :target: https://www.python.org/downloads/release/python-3911/
     
-.. image:: docs/source/release_v3_4_1b_tag.png
+.. image:: docs/source/release_v3_5_0b_tag.png
     :target: https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
     
 .. image:: https://readthedocs.org/projects/pytravcalcmanual/badge/?version=latest
@@ -12,19 +12,19 @@
     :target: https://github.com/ShawnDriscoll/PyTravCalc/stargazers
 
 
-**PyTravCalc 3.4.1b**
+**PyTravCalc 3.5.0b**
 =====================
 
 .. figure:: pytravcalc_manual_cover_art.png
 
 
-**PyTravCalc 3.4.1b** is a Windows program for calculating die rolls for Mongoose Traveller 2nd Edition.
+**PyTravCalc 3.5.0b** is a Windows program for calculating die rolls for Mongoose Traveller 2nd Edition.
 
 
 Notes
 -----
 
-**PyTravCalc 3.4.1b** is being tested on Windows 10.
+**PyTravCalc 3.5.0b** is being tested on Windows 10.
 
 Read the **PyTravCalc Manual** at http://pytravcalcmanual.readthedocs.io
 
@@ -32,6 +32,10 @@ Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/download
 
 or the EPUB from https://readthedocs.org/projects/pytravcalcmanual/downloads/epub/latest
 
+
+What's New in 3.5?
+
+**colorama** is no longer required.
 
 What's New in 3.4?
 ------------------
@@ -62,10 +66,6 @@ Requirements
    
    **PyTravCalc** was written using the C implementation of Python
    version 3.9.11. Also known as CPython.
-
-* **colorama 0.4.4**
-
-   Because CMD may have some colored text messages for debugging invalid die rolls.
    
 * **PyQt5 5.15.4**
 

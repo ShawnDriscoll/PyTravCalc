@@ -1,11 +1,11 @@
 #
-#   PyTravCalc 3.4.1 Beta for Mongoose Traveller 2nd Edition
+#   PyTravCalc 3.5.0 Beta for Mongoose Traveller 2nd Edition
 #   Written for Python 3.9.11
 #
 ##############################################################
 
 """
-PyTravCalc 3.4.1 Beta for Mongoose Traveller 2nd Edition
+PyTravCalc 3.5.0 Beta for Mongoose Traveller 2nd Edition
 --------------------------------------------------------
 
 This program rolls 6-sided dice and calculates their effects.
@@ -34,8 +34,8 @@ from matplotlib import font_manager
 import logging
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'PyTravCalc 3.4.1 Beta'
-__version__ = '3.4.1b'
+__app__ = 'PyTravCalc 3.5.0 Beta'
+__version__ = '3.5.0b'
 __py_version__ = '3.9.11'
 __expired_tag__ = False
 
@@ -1687,7 +1687,7 @@ if __name__ == '__main__':
     
     if len(sys.argv) < 2:
 
-        if trange[0] > 2022 or trange[1] > 7:
+        if trange[0] > 2022 or trange[1] > 11:
             __expired_tag__ = True
             __app__ += ' [EXPIRED]'
 
@@ -1731,7 +1731,7 @@ if __name__ == '__main__':
 
         app.exec_()
     
-    elif trange[0] > 2022 or trange[1] > 7:
+    elif trange[0] > 2022 or trange[1] > 11:
         __app__ += ' [EXPIRED]'
         '''
         Beta for this app has expired!

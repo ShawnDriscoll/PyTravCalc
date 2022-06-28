@@ -1,15 +1,23 @@
-**What's New with PyTravCalc 3.4?**
+**What's New with PyTravCalc 3.5?**
 ===================================
+
+New in PyTravCalc 3.5.0
+-----------------------
+
+PyTravCalc no longer requires **colorama**.
+
 
 New in PyTravCalc 3.4.1
 -----------------------
 
 The older integer division has been depricated.
 
+
 New in PyTravCalc 3.4.0
 -----------------------
 
 SHONNER dice have been added to the dice selection.
+
 
 New in PyTravCalc 3.3.0
 -----------------------
