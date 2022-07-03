@@ -34,6 +34,7 @@ or the EPUB from https://readthedocs.org/projects/pytravcalcmanual/downloads/epu
 
 
 What's New in 3.5?
+------------------
 
 **colorama** is no longer required.
 
