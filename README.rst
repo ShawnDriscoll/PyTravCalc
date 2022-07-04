@@ -17,8 +17,6 @@ Read the **PyTravCalc Manual** at http://pytravcalcmanual.readthedocs.io
 
 Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
 
-or the EPUB from https://readthedocs.org/projects/pytravcalcmanual/downloads/epub/latest
-
 
 What's New in 3.5?
 ------------------
