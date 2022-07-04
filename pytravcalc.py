@@ -1,11 +1,11 @@
 #
-#   PyTravCalc 3.5.0 Beta for Mongoose Traveller 2nd Edition
-#   Written for Python 3.9.11
+#   PyTravCalc 3.6.1 Beta for Mongoose Traveller 2nd Edition
+#   Written for Python 3.9
 #
 ##############################################################
 
 """
-PyTravCalc 3.5.0 Beta for Mongoose Traveller 2nd Edition
+PyTravCalc 3.6.1 Beta for Mongoose Traveller 2nd Edition
 --------------------------------------------------------
 
 This program rolls 6-sided dice and calculates their effects.
@@ -34,8 +34,8 @@ from matplotlib import font_manager
 import logging
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'PyTravCalc 3.5.0 Beta'
-__version__ = '3.5.0b'
+__app__ = 'PyTravCalc 3.6.1 Beta'
+__version__ = '3.6.1b'
 __py_version__ = '3.9.11'
 __expired_tag__ = False
 
@@ -268,7 +268,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Set active/deactive menu items
         self.actionPlaySample.setDisabled(self.muted)
         self.actionMute.setDisabled(self.muted)
-        self.actionUnMute.setDisabled(not self.muted)
         self.actionStandardDice.setDisabled(self.standard_dice)
         self.actionTravellerDice.setDisabled(self.traveller_dice)
         self.actionAKODice.setDisabled(self.ako_dice)

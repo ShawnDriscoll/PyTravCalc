@@ -18,6 +18,11 @@ Read the **PyTravCalc Manual** at http://pytravcalcmanual.readthedocs.io
 Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
 
 
+What's New in 3.6?
+------------------
+
+**ADVANTAGE** and **DISADVANTAGE** dice types can now be rolled.
+
 What's New in 3.5?
 ------------------
 
@@ -76,6 +81,46 @@ Not Using Python?
 -----------------
 
 You can always run the .EXE version for Windows 10 if you don't have the Python language installed.
+
+
+.. |ss| raw:: html
+
+    <strike>
+
+.. |se| raw:: html
+
+    </strike>
+
+Things To-Do
+------------
+
+| Add more dice roll types.
+| Cheat codes.
+|ss|
+
+| Add Advantage and Disadvantage roll types.
+| Make it talk.
+| Start on a To-Do.
+
+|se|
+
+**Known History**
+
+* v0.6.1b
+
+  Removed unMute legacy code that wasn't being used.
+
+* v0.6.0b
+
+  Added Advantage and Disadvantage roll types.
+
+* v0.4.0b
+
+  SHONNER Dice are now included.
+
+* v0.1.0b
+
+  Initial release. Back in the Python 2.5 days.
 
 
 The Traveller game in all forms is owned by Far Future Enterprises. Copyright 1977 - 2022 Far Future Enterprises. Traveller is a registered trademark of Far Future Enterprises.

@@ -1,5 +1,12 @@
-**What's New with PyTravCalc 3.5?**
-===================================
+**What's New in PyTravCalc?**
+=============================
+
+New in PyTravCalc 3.6.0
+-----------------------
+
+**ADVANTAGE** and **DISADVANTAGE** roll types have been added. These rolls are done manually. They can
+also be rolled from the CMD prompt.
+
 
 New in PyTravCalc 3.5.0
 -----------------------

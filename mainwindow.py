@@ -831,8 +831,6 @@ class Ui_MainWindow(object):
         self.actionPlaySample = QtWidgets.QAction(MainWindow)
         self.actionPlaySample.setEnabled(False)
         self.actionPlaySample.setObjectName("actionPlaySample")
-        self.actionUnMute = QtWidgets.QAction(MainWindow)
-        self.actionUnMute.setObjectName("actionUnMute")
         self.actionMute = QtWidgets.QAction(MainWindow)
         self.actionMute.setObjectName("actionMute")
         self.actionVisit_Blog = QtWidgets.QAction(MainWindow)
@@ -983,7 +981,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "PyTravCalc 3.5.0 (Beta)"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "PyTravCalc 3.6.1 (Beta)"))
         self.taskBox.setTitle(_translate("MainWindow", "Task"))
         self.effectlabel.setText(_translate("MainWindow", "Effect"))
         self.effect_result.setToolTip(_translate("MainWindow", "Task effect"))
@@ -1077,8 +1075,6 @@ class Ui_MainWindow(object):
         self.actionQuit.setStatusTip(_translate("MainWindow", "Quit this program"))
         self.actionPlaySample.setText(_translate("MainWindow", "Play Sample"))
         self.actionPlaySample.setStatusTip(_translate("MainWindow", "Perform an audio test"))
-        self.actionUnMute.setText(_translate("MainWindow", "Un-Mute"))
-        self.actionUnMute.setStatusTip(_translate("MainWindow", "Enable audio"))
         self.actionMute.setText(_translate("MainWindow", "Mute"))
         self.actionMute.setStatusTip(_translate("MainWindow", "Disable audio"))
         self.actionVisit_Blog.setText(_translate("MainWindow", "Visit Blog"))
