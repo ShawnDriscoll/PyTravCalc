@@ -1,30 +1,17 @@
-.. image:: docs/source/python_v3_9_11_tag.png
-    :target: https://www.python.org/downloads/release/python-3911/
-    
-.. image:: docs/source/release_v3_5_0b_tag.png
-    :target: https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
-    
-.. image:: https://readthedocs.org/projects/pytravcalcmanual/badge/?version=latest
-    :target: http://pytravcalcmanual.readthedocs.io/en/latest/?badge=latest
-    :alt: Doc Status
 
-.. image:: https://img.shields.io/github/stars/ShawnDriscoll/PyTravCalc.svg
-    :target: https://github.com/ShawnDriscoll/PyTravCalc/stargazers
-
-
-**PyTravCalc 3.5.0b**
-=====================
+**PyTravCalc**
+==============
 
 .. figure:: pytravcalc_manual_cover_art.png
 
 
-**PyTravCalc 3.5.0b** is a Windows program for calculating die rolls for Mongoose Traveller 2nd Edition.
+**PyTravCalc** is a Windows program for calculating die rolls for Mongoose Traveller 2nd Edition.
 
 
 Notes
 -----
 
-**PyTravCalc 3.5.0b** is being tested on Windows 10.
+**PyTravCalc** is being tested on Windows 10.
 
 Read the **PyTravCalc Manual** at http://pytravcalcmanual.readthedocs.io
 
@@ -63,10 +50,10 @@ Requirements
 
   It might not work in OSX or Linux.
 
-* **Python 3.9.11**
+* **Python 3.9**
    
   **PyTravCalc** was written using the C implementation of Python
-  version 3.9.11. Also known as CPython.
+  version 3.9. Also known as CPython.
    
 * **PyQt5 5.15.4**
 
