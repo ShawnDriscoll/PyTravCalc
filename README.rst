@@ -51,8 +51,6 @@ Requirements
 
 * **Windows 10**
 
-  It might not work in OSX or Linux.
-
 * **Python 3.9**
    
   **PyTravCalc** was written using the C implementation of Python
