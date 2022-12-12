@@ -18,6 +18,11 @@ Read the **PyTravCalc Manual** at http://pytravcalcmanual.readthedocs.io
 Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
 
 
+What's New in 3.6.5?
+--------------------
+
+ Updated to Python 3.11.0. Switched from **PyDiceroll** to using **pydice** for its roller.
+
 What's New in 3.6?
 ------------------
 
@@ -51,28 +56,25 @@ Requirements
 
 * **Windows 10**
 
-* **Python 3.9**
+  This code has not been tested on Windows 11.
+
+* **Python 3.11**
    
   **PyTravCalc** was written using the C implementation of Python
-  version 3.9. Also known as CPython.
+  version 3.11. Also known as CPython.
    
-* **PyQt5 5.15.4**
+* **PyQt5 5.15.7**
 
   PyQt5 is the framework used for displaying the Window GUI and buttons, etc.
 
-* **numpy 1.20.2**
+* **numpy 1.23.5**
 
   For building arrays.
 
-* **matplotlib 3.4.2**
+* **matplotlib 3.6.2**
 
   For graphics plotting.
-   
 
-Warning
--------
-
-**PyTravCalc** will not work with **Python 2.7-**.
 
 
 Not Using Python?
@@ -104,15 +106,19 @@ Things To-Do
 
 **Known History**
 
-* v0.6.1b
+* v3.6.5b
+
+  Updated to Python 3.11.0. Now using **pydice**.
+
+* v3.6.1b
 
   Removed unMute legacy code that wasn't being used.
 
-* v0.6.0b
+* v3.6.0b
 
   Added Advantage and Disadvantage roll types.
 
-* v0.4.0b
+* v3.4.0b
 
   SHONNER Dice are now included.
 
@@ -121,7 +127,7 @@ Things To-Do
   Initial release. Back in the Python 2.5 days.
 
 
-The Traveller game in all forms is owned by Far Future Enterprises. Copyright 1977 - 2022 Far Future Enterprises. Traveller is a registered trademark of Far Future Enterprises.
+The Traveller game in all forms is owned by Far Future Enterprises. Copyright 1977 - 2023 Far Future Enterprises. Traveller is a registered trademark of Far Future Enterprises.
 
 Contact
 -------

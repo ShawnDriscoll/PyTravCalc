@@ -1,11 +1,11 @@
 #
-#   PyTravCalc 3.6.1 Beta for Mongoose Traveller 2nd Edition
-#   Written for Python 3.9
+#   PyTravCalc 3.6.5 Beta for Mongoose Traveller 2nd Edition
+#   Written for Python 3.11
 #
 ##############################################################
 
 """
-PyTravCalc 3.6.1 Beta for Mongoose Traveller 2nd Edition
+PyTravCalc 3.6.5 Beta for Mongoose Traveller 2nd Edition
 --------------------------------------------------------
 
 This program rolls 6-sided dice and calculates their effects.
@@ -26,7 +26,7 @@ from mainwindow import Ui_MainWindow
 from aboutdialog import Ui_aboutDialog
 from alertdialog import Ui_alertDialog
 from random import randint
-from rpg_tools.PyDiceroll import roll
+from rpg_tools.pydice import roll
 import sys
 import os
 import numpy as np
@@ -34,9 +34,9 @@ from matplotlib import font_manager
 import logging
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'PyTravCalc 3.6.1 Beta'
-__version__ = '3.6.1b'
-__py_version__ = '3.9.11'
+__app__ = 'PyTravCalc 3.6.5 Beta'
+__version__ = '3.6.5b'
+__py_version__ = '3.11.0'
 __expired_tag__ = False
 
 #form_class = uic.loadUiType("mainwindow.ui")[0]
@@ -1686,7 +1686,7 @@ if __name__ == '__main__':
     
     if len(sys.argv) < 2:
 
-        if trange[0] > 2022 or trange[1] > 11:
+        if trange[0] > 2022 or trange[1] > 12:
             __expired_tag__ = True
             __app__ += ' [EXPIRED]'
 
@@ -1730,7 +1730,7 @@ if __name__ == '__main__':
 
         app.exec_()
     
-    elif trange[0] > 2022 or trange[1] > 11:
+    elif trange[0] > 2022 or trange[1] > 12:
         __app__ += ' [EXPIRED]'
         '''
         Beta for this app has expired!

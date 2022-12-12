@@ -1,186 +1,57 @@
 
-
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" />
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <title>PyTravCalc Tutorial &mdash; PyTravCalc 3.6 Manual</title>
-  
 
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-  
-  
+    <title>PyTravCalc Tutorial &#8212; PyTravCalc 3.6 Manual</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/agogo.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <link rel="shortcut icon" href="_static/PyTravCalc_icon_16x16.ico"/>
-  
-
-  
-  
-
-  
-
-  
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/doctools.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Open Source" href="license.html" />
     <link rel="prev" title="What’s New in PyTravCalc?" href="what_is_new.html" /> 
-</head>
-
-<body class="wy-body-for-nav">
-
-   
-  <div class="wy-grid-for-nav">
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-          
-
-          
-            <a href="index.html" class="icon icon-home"> PyTravCalc Manual
-          
-
-          
-            
-            <img src="_static/shonner_trans.png" class="logo" alt="Logo"/>
-          
-          </a>
-
-          
-            
-            
-              <div class="version">
-                3.6
-              </div>
-            
-          
-
-          
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-
-          
+  </head><body>
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+          <p class="logo"><a href="index.html">
+            <img class="logo" src="_static/shonner_trans.png" alt="Logo"/>
+          </a></p>
+        <div class="headertitle"><a
+          href="index.html">PyTravCalc 3.6 Manual</a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="what_is_new.html" title="What’s New in PyTravCalc?"
+             accesskey="P">previous</a> |
+          <a href="license.html" title="Open Source"
+             accesskey="N">next</a>
         </div>
+       </div>
+    </div>
 
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
             
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
             
-              
-            
-            
-              <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="overview.html"><strong>Overview</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="introduction.html"><strong>Introduction</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="installing.html"><strong>Installing</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="what_is_new.html"><strong>What’s New in PyTravCalc?</strong></a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>PyTravCalc Tutorial</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#the-gui">The GUI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#making-a-task-roll">Making a Task Roll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#making-a-damage-roll">Making a Damage Roll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#manually-inputting-rolls">Manually Inputting Rolls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#settings-menu">Settings Menu</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="license.html"><strong>Open Source</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="ffe.html"><strong>FFE Agreement</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="about_the_author.html"><strong>About the Author</strong></a></li>
-</ul>
-
-            
-          
-        </div>
-        
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">PyTravCalc Manual</a>
-        
-      </nav>
-
-
-      <div class="wy-nav-content">
-        
-        <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
-  <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-        
-      <li><strong>PyTravCalc Tutorial</strong></li>
-    
-    
-      <li class="wy-breadcrumbs-aside">
-        
-          
-        
-      </li>
-    
-  </ul>
-
-  
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-            
-  <div class="section" id="pytravcalc-tutorial">
-<h1><strong>PyTravCalc Tutorial</strong><a class="headerlink" href="#pytravcalc-tutorial" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="the-gui">
-<h2>The GUI<a class="headerlink" href="#the-gui" title="Permalink to this headline">¶</a></h2>
+  <section id="pytravcalc-tutorial">
+<h1><strong>PyTravCalc Tutorial</strong><a class="headerlink" href="#pytravcalc-tutorial" title="Permalink to this heading">¶</a></h1>
+<section id="the-gui">
+<h2>The GUI<a class="headerlink" href="#the-gui" title="Permalink to this heading">¶</a></h2>
 <p>After the program starts, there should be a screen that looks like:</p>
-<div class="figure align-default">
+<figure class="align-default">
 <img alt="_images/program_start_screen.png" src="_images/program_start_screen.png" />
-</div>
+</figure>
 <p>The screen contains various outlined areas that are labeled as:</p>
 <blockquote>
 <div><div class="line-block">
@@ -204,9 +75,9 @@
 <p class="admonition-title">Note</p>
 <p>Plotted graphs are generated only when difficulties are selected. <strong>D66</strong> and manually inputted rolls will never generate graphs.</p>
 </div>
-</div>
-<div class="section" id="making-a-task-roll">
-<h2>Making a Task Roll<a class="headerlink" href="#making-a-task-roll" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="making-a-task-roll">
+<h2>Making a Task Roll<a class="headerlink" href="#making-a-task-roll" title="Permalink to this heading">¶</a></h2>
 <p>Typically, task rolls will have a difficulty chosen by the game’s referee. The player simply clicks the <strong>Task Difficulty</strong> button and chooses a difficulty level. This will unlock the rest of the <strong>Task</strong> area that the player can fill in as well. It’s pretty much self-explanatory how the rest is filled in. It is assumed that the player has a characteristic and a skill in mind when changing these values.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -215,80 +86,95 @@
 </div>
 <p>Once the DM is calculated, a roll is then made (determined by the referee). The dice will be shown. The roll <strong>Result</strong> and <strong>Effect</strong> will be calculated. And the <strong>Task Time</strong> will be calculated if a <strong>Timeframe</strong> was chosen.</p>
 <p>A graph of the <strong>Outcome</strong> will then be displayed.</p>
-</div>
-<div class="section" id="making-a-damage-roll">
-<h2>Making a Damage Roll<a class="headerlink" href="#making-a-damage-roll" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="making-a-damage-roll">
+<h2>Making a Damage Roll<a class="headerlink" href="#making-a-damage-roll" title="Permalink to this heading">¶</a></h2>
 <p>The normal damage <strong>D</strong> and destructive damage <strong>DD</strong> rolls calculate the “soaking” of damage against armor. <strong>Armor</strong> score is entered, along with hidden <strong>Cover</strong> amount and <strong>AP</strong> score. The number of dice is selected. And a <strong>DM</strong> can be added before clicking either the <strong>D</strong> or <strong>DD</strong> roll buttons. Any effect will be added to <strong>D</strong> rolls only.</p>
 <p>The <strong>Clear</strong> button will reset the damage area.
 The <strong>Clear All</strong> button will reset all the areas.</p>
-</div>
-<div class="section" id="manually-inputting-rolls">
-<h2>Manually Inputting Rolls<a class="headerlink" href="#manually-inputting-rolls" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="manually-inputting-rolls">
+<h2>Manually Inputting Rolls<a class="headerlink" href="#manually-inputting-rolls" title="Permalink to this heading">¶</a></h2>
 <p>Here you are not limited to just Traveller rolls. You can enter other rolls for other kinds of dice used in other games. <strong>PyTravCalc</strong> will keep a history of the rolls that you enter.</p>
 <p>The <strong>Clear</strong> button will reset the roll history.
 The <strong>Clear All</strong> button will reset all the areas.</p>
 <p>Check the included <code class="docutils literal notranslate"><span class="pre">PyDiceroll.pdf</span></code> manual to see what other kinds of rolls <strong>PyTravCalc</strong> can perform manually.</p>
-</div>
-<div class="section" id="settings-menu">
-<h2>Settings Menu<a class="headerlink" href="#settings-menu" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="settings-menu">
+<h2>Settings Menu<a class="headerlink" href="#settings-menu" title="Permalink to this heading">¶</a></h2>
 <p>Dice styles can be selected from the <strong>Dice</strong> menu.
 Voice styles (yes, voice styles) can be selected from the <strong>Audio</strong> menu.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Only the <strong>female voice</strong> works with general die rolls (rolls made without a <strong>Task Difficulty</strong>). Any manually inputted rolls will not be voiced.</p>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
-           </div>
-           
+            <div class="clearer"></div>
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="license.html" class="btn btn-neutral float-right" title="Open Source" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="what_is_new.html" class="btn btn-neutral float-left" title="What’s New in PyTravCalc?" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>
-        &#169; Copyright 2022, SHONNER CORP.
-      <span class="lastupdated">
-        Last updated on Jul 04, 2022.
-      </span>
-
-    </p>
-  </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
-
-</footer>
         </div>
       </div>
+        </div>
+        <div class="sidebar">
+          
+          <h3>Table of Contents</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html"><strong>Overview</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html"><strong>Introduction</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="installing.html"><strong>Installing</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="what_is_new.html"><strong>What’s New in PyTravCalc?</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>PyTravCalc Tutorial</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-gui">The GUI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-a-task-roll">Making a Task Roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-a-damage-roll">Making a Damage Roll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#manually-inputting-rolls">Manually Inputting Rolls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#settings-menu">Settings Menu</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="license.html"><strong>Open Source</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="ffe.html"><strong>FFE Agreement</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="about_the_author.html"><strong>About the Author</strong></a></li>
+</ul>
 
-    </section>
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Search</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+            </form>
+          </div>
 
-  </div>
-  
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
 
-  <script type="text/javascript">
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script>
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="what_is_new.html" title="What’s New in PyTravCalc?"
+              >previous</a> |
+            <a href="license.html" title="Open Source"
+              >next</a>
+          </div>
+          <div role="note" aria-label="source link">
+          </div>
+        </div>
 
-  
-  
-    
-   
+        <div class="right">
+          
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, SHONNER CORP.
+      Last updated on Dec 12, 2022.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
 
-</body>
+  </body>
 </html>

@@ -64,7 +64,7 @@ temp/
 ## PyInstaller
 ##############
 *.spec
-build/
+#build/
 dist/
 
 
@@ -73,3 +73,10 @@ dist/
 ##########
 images/
 sounds/
+
+
+#########
+## Sphinx
+#########
+#build/
+#source/
