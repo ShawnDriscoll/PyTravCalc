@@ -59,7 +59,7 @@ Here you are not limited to just Traveller rolls. You can enter other rolls for 
 The **Clear** button will reset the roll history.
 The **Clear All** button will reset all the areas.
 
-Check the included ``PyDiceroll.pdf`` manual to see what other kinds of rolls **PyTravCalc** can perform manually.
+Check the included ``pydice.pdf`` manual to see what other kinds of rolls **PyTravCalc** can perform manually.
 
 
 Settings Menu
