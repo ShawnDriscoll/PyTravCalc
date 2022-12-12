@@ -26,27 +26,25 @@ Requirements
 * **Microsoft Windows**
    
    **PyTravCalc** is being tested on Windows 10.
-   It has not been tested on MacOS or Linux.
+   It has not been tested on Windows 11.
    
-* **Python 3.9**
+* **Python 3.11**
    
    **PyTravCalc** was written using the C implementation of Python
-   version 3.9. Also known as CPython.
+   version 3.11. Also known as CPython.
    
-* **PyQt5 5.15.4**
+* **PyQt5 5.15.7**
 
    PyQt5 is the framework used for displaying the Window GUI and buttons, etc.
 
-* **numpy 1.20.2**
+* **numpy 1.23.5**
 
    For building arrays.
 
-* **matplotlib 3.4.2**
+* **matplotlib 3.6.2**
 
    For graphics plotting.
-   
-.. Warning::
-   **PyTravCalc** will not work with **Python 2.7-**.
+
    
 
 Not Using Python?
