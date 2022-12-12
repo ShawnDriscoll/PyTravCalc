@@ -21,7 +21,7 @@ Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/download
 What's New in 3.6.5?
 --------------------
 
- Updated to Python 3.11.0. Switched from **PyDiceroll** to using **pydice** for its roller.
+Updated to Python 3.11.0. Switched from **PyDiceroll** to using **pydice** for its roller.
 
 What's New in 3.6?
 ------------------
