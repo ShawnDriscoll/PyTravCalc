@@ -11,7 +11,7 @@ PyTravCalc 3.6.5 Beta for Mongoose Traveller 2nd Edition
 This program rolls 6-sided dice and calculates their effects.
 
 The Traveller game in all forms is owned by Far Future Enterprises.
-Copyright 1977 - 2022 Far Future Enterprises.
+Copyright 1977 - 2023 Far Future Enterprises.
 Traveller is a registered trademark of Far Future Enterprises.
 """
 #import vlc
