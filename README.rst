@@ -21,7 +21,7 @@ Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/download
 What's New in 3.6.6?
 --------------------
 
-Updated for Python 3.11.4, pydice 3.12.5, and PyQt5 5.15.9.
+Updated for Python 3.11.4, pydice 3.12.6, and PyQt5 5.15.9.
 
 What's New in 3.6.5?
 --------------------
@@ -113,7 +113,7 @@ Things To-Do
 
 * v3.6.6b
 
-  Updated to Python 3.11.4, pydice 3.12.5, and PyQt5 5.15.9.
+  Updated to Python 3.11.4, pydice 3.12.6, and PyQt5 5.15.9.
 
 * v3.6.5b
 
