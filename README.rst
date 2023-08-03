@@ -18,6 +18,11 @@ Read the **PyTravCalc Manual** at http://pytravcalcmanual.readthedocs.io
 Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
 
 
+What's New in 3.6.6?
+--------------------
+
+Updated for Python 3.11.4, pydice 3.12.5, and PyQt5 5.15.9.
+
 What's New in 3.6.5?
 --------------------
 
@@ -58,20 +63,20 @@ Requirements
 
   This code has not been tested on Windows 11.
 
-* **Python 3.11**
+* **Python 3.11.4**
    
   **PyTravCalc** was written using the C implementation of Python
-  version 3.11. Also known as CPython.
+  version 3.11.4. Also known as CPython.
    
-* **PyQt5 5.15.7**
+* **PyQt5 5.15.9**
 
   PyQt5 is the framework used for displaying the Window GUI and buttons, etc.
 
-* **numpy 1.23.5**
+* **numpy 1.25.0**
 
   For building arrays.
 
-* **matplotlib 3.6.2**
+* **matplotlib 3.7.1**
 
   For graphics plotting.
 
@@ -105,6 +110,10 @@ Things To-Do
 |se|
 
 **Known History**
+
+* v3.6.6b
+
+  Updated to Python 3.11.4, pydice 3.12.5, and PyQt5 5.15.9.
 
 * v3.6.5b
 

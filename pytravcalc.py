@@ -1,11 +1,11 @@
 #
-#   PyTravCalc 3.6.5 Beta for Mongoose Traveller 2nd Edition
+#   PyTravCalc 3.6.6 Beta for Mongoose Traveller 2nd Edition
 #   Written for Python 3.11
 #
 ##############################################################
 
 """
-PyTravCalc 3.6.5 Beta for Mongoose Traveller 2nd Edition
+PyTravCalc 3.6.6 Beta for Mongoose Traveller 2nd Edition
 --------------------------------------------------------
 
 This program rolls 6-sided dice and calculates their effects.
@@ -34,9 +34,9 @@ from matplotlib import font_manager
 import logging
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'PyTravCalc 3.6.5 Beta'
-__version__ = '3.6.5b'
-__py_version__ = '3.11.0'
+__app__ = 'PyTravCalc 3.6.6 Beta'
+__version__ = '3.6.6b'
+__py_version_req__ = (3,11,4)
 __expired_tag__ = False
 
 #form_class = uic.loadUiType("mainwindow.ui")[0]
@@ -1518,14 +1518,22 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         '''
         A roll was inputed manually
         '''
-        log.debug('Manually entered')
         dice_entered = self.rollInput.text()
-        roll_returned = roll(dice_entered)
-        if roll_returned == -9999:
-            returned_line = dice_entered + ' = ' + '<span style=" color:#ff0000;">' + str(roll_returned) + '</span>'
+        dice_entered = dice_entered.upper()
+        if dice_entered == 'INFO' or dice_entered == 'TEST' or dice_entered == 'MINMAXAVG':
+            roll_returned = roll(dice_entered)
         else:
-            returned_line = dice_entered + ' = ' + str(roll_returned)
-        self.rollBrowser.append(returned_line)
+            log.debug('Manual die roll entered.')
+            roll_returned = roll(dice_entered)
+            
+            # Was the roll a valid one?
+            if roll_returned == -9999:
+                returned_line = dice_entered + ' = ' + '<span style=" color:#ff0000;">' + str(roll_returned) + '</span>'
+            else:
+                returned_line = dice_entered + ' = ' + str(roll_returned)
+                
+            # Display the roll result inside the text browser
+            self.rollBrowser.append(returned_line)
 
     def clearRollHistoryClicked(self):
         '''
@@ -1686,7 +1694,7 @@ if __name__ == '__main__':
     
     if len(sys.argv) < 2:
 
-        if trange[0] > 2023 or trange[1] > 7:
+        if trange[0] > 2023 or trange[1] > 11:
             __expired_tag__ = True
             __app__ += ' [EXPIRED]'
 
@@ -1730,7 +1738,7 @@ if __name__ == '__main__':
 
         app.exec_()
     
-    elif trange[0] > 2023 or trange[1] > 7:
+    elif trange[0] > 2023 or trange[1] > 11:
         __app__ += ' [EXPIRED]'
         '''
         Beta for this app has expired!
@@ -1740,6 +1748,7 @@ if __name__ == '__main__':
         print(__app__)
         
     elif sys.argv[1] in ['-h', '/h', '--help', '-?', '/?']:
+        log.info('PyTravCalc was run from the CMD prompt.  Help will be sent if needed.')
         print()
         print('     Using the CMD prompt to make dice rolls:')
         print("     C:\>PyTravCalc.py roll('2d6')")
@@ -1748,7 +1757,8 @@ if __name__ == '__main__':
         print('     C:\>PyTravCalc.py 2d6')
     elif sys.argv[1] in ['-v', '/v', '--version']:
         print()
-        print('     PyTravCalc, release version ' + __version__ + ' for Python ' + __py_version__)
+        print('     PyTravCalc, release version ' + __version__ + ' for Python ' + str(__py_version_req__))
+        log.info('Reporting: PyTravCalc release version: %s' % __version__)
     else:
         print()
         dice = ''
@@ -1763,17 +1773,27 @@ if __name__ == '__main__':
             if num != -1:
                 dice = dice[6:num]
                 dice = str(dice).upper().strip()
+                if dice == '':
+                    dice = '2D6'
+                    log.debug('Default roll was made')
                 num = roll(dice)
-                if dice != 'TEST' and dice != 'INFO':
-                    print("Your '%s' roll is %d." % (dice, num))
-                    log.info("The direct call to PyTravCalc with '%s' resulted in %d." % (dice, num))
+                if dice != 'TEST' and dice != 'INFO' and dice != 'MINMAXAVG':
+                    print("Your '%s' roll is %s." % (dice, num))
+                    log.info("The direct call to PyTravCalc with '%s' resulted in %s." % (dice, num))
                 elif dice == 'INFO':
-                    print('PyTravCalc, release version ' + __version__ + ' for Python ' + __py_version__)
+                    print('PyTravCalc, release version ' + __version__ + ' for Python ' + str(__py_version_req__))
+                    log.info('Reporting: PyTravCalc release version: %s' % __version__)
+            else:
+                print('Typo of some sort --> ' + dice)
         else:
             dice = str(dice).upper().strip()
+            if dice == 'ROLL()':
+                dice = '2D6'
+                log.debug('Default roll was made')
             num = roll(dice)
-            if dice != 'TEST' and dice != 'INFO':
-                print("Your '%s' roll is %d." % (dice, num))
-                log.info("The direct call to PyTravCalc with '%s' resulted in %d." % (dice, num))
+            if dice != 'TEST' and dice != 'INFO' and dice != 'MINMAXAVG':
+                print("Your '%s' roll is %s." % (dice, num))
+                log.info("The direct call to PyTravCalc with '%s' resulted in %s." % (dice, num))
             elif dice == 'INFO':
-                print('PyTravCalc, release version ' + __version__ + ' for Python ' + __py_version__)
+                print('PyTravCalc, release version ' + __version__ + ' for Python ' + str(__py_version_req__))
+                log.info('Reporting: PyTravCalc release version: %s' % __version__)
