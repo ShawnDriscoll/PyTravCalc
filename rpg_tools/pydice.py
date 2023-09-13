@@ -1,5 +1,5 @@
 #
-#   pydice.py 3.12.6
+#   pydice.py 3.12.7
 #
 #   Written for Python 3.11.4
 #
@@ -26,7 +26,7 @@ import logging
 import sys
 
 __version__ = '3.12'
-__release__ = '3.12.6'
+__release__ = '3.12.7'
 __py_version_req__ = (3,11,4)
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
 
@@ -322,9 +322,9 @@ def roll(dice='2d6'):
 
     # check if negative number of dice was entered
     if dice[0] == '-':
-        log.error('Negative dice count found! [ERROR]')
-        print('Negative dice count found! [ERROR]')
-        dice_log.error("Negative number of dice = '" + dice + "' [ERROR]")
+        log.error('[ERROR] Negative dice count found: %s' % dice)
+        print('[ERROR] Negative dice count found: %s' % dice)
+        dice_log.error('[ERROR] Negative dice count found: %s' % dice)
         return __error__
 
     #get dice modifier
@@ -336,8 +336,10 @@ def roll(dice='2d6'):
             dice_mod = int(dice[ichar2:len(dice)])
             dice = dice[:ichar2]
         except ValueError:
+            log.error('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
             print('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
             dice_log.error('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
+            return __error__
     else:
         ichar2 = dice.find('-')
         if ichar2 != -1:
@@ -345,8 +347,10 @@ def roll(dice='2d6'):
                 dice_mod = int(dice[ichar2:len(dice)])
                 dice = dice[:ichar2]
             except ValueError:
+                log.error('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
                 print('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
                 dice_log.error('[ERROR] Not a valid dice modifier: %s' % dice[ichar2:len(dice)])
+                return __error__
 
     if dice == 'BOON':
         dice = '3D6H2'
@@ -382,6 +386,7 @@ def roll(dice='2d6'):
 
     # look for H or L in string (for keeping higher or lower dice)
     keep = None
+    temp_dice = dice
     ichar4 = dice.find('L')
     if ichar4 == -1:
         ichar4 = dice.find('H')
@@ -391,6 +396,11 @@ def roll(dice='2d6'):
         keep = dice[ichar4:len(dice)]
     if keep != None:
         dice = dice[0:len(dice)-2]
+    if keep == 'H' or keep == 'L':
+        log.error('[ERROR] No number of high or low dice kept: %s' % temp_dice)
+        print('[ERROR] No number of high or low dice kept: %s' % temp_dice)
+        dice_log.error('[ERROR] No number of high or low dice kept: %s' % temp_dice)
+        return __error__
 
     # look for DD in the string (for destructive dice rolls)
     ichar1 = dice.find('DD')
@@ -600,7 +610,7 @@ def roll(dice='2d6'):
                 dice_log.info("'%s' = (%d%s+%d) * 10 = %d %s" % (dice, num_dice, dice_type, dice_mod, rolled, dice_comment))
                 return rolled
                                                     
-    log.error('Wrong dice type entered! [ERROR]')
+    log.error('[ERROR] Wrong dice type entered: %s' % org_dice)
     dice_log.error("!!!!!!!!!!!!!!!!!!!!! DICE ERROR! '" + org_dice + "' is unknown !!!!!!!!!!!!!!!!!!!!!!!!!")
     
     print()

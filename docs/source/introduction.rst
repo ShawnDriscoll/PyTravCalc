@@ -33,15 +33,15 @@ Requirements
    **PyTravCalc** was written using the C implementation of Python
    version 3.11. Also known as CPython.
    
-* **PyQt5 5.15.7**
+* **PyQt5 5.15.9**
 
    PyQt5 is the framework used for displaying the Window GUI and buttons, etc.
 
-* **numpy 1.23.5**
+* **numpy 1.25.0**
 
    For building arrays.
 
-* **matplotlib 3.6.2**
+* **matplotlib 3.7.1**
 
    For graphics plotting.
 

@@ -45,7 +45,7 @@ author = 'Shawn Driscoll'
 # The short X.Y version.
 version = '3.6'
 # The full version, including alpha/beta/rc tags.
-release = '3.6.5b (First Printing)'
+release = '3.6.6b (First Printing)'
 #release = '(First Printing)'
 
 # There are two options for replacing |today|: either, you set today to some

@@ -21,7 +21,7 @@ Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/download
 What's New in 3.6.6?
 --------------------
 
-Updated for Python 3.11.4, pydice 3.12.6, and PyQt5 5.15.9.
+Updated for Python 3.11.4, pydice 3.12.7, and PyQt5 5.15.9.
 
 What's New in 3.6.5?
 --------------------
@@ -63,10 +63,10 @@ Requirements
 
   This code has not been tested on Windows 11.
 
-* **Python 3.11.4**
+* **Python 3.11**
    
   **PyTravCalc** was written using the C implementation of Python
-  version 3.11.4. Also known as CPython.
+  version 3.11. Also known as CPython.
    
 * **PyQt5 5.15.9**
 
@@ -113,7 +113,7 @@ Things To-Do
 
 * v3.6.6b
 
-  Updated to Python 3.11.4, pydice 3.12.6, and PyQt5 5.15.9.
+  Updated to Python 3.11.4, pydice 3.12.7, and PyQt5 5.15.9.
 
 * v3.6.5b
 
@@ -133,7 +133,7 @@ Things To-Do
 
 * v0.1.0b
 
-  Initial release. Back in the Python 2.5 days.
+  Initial release. Back in the Classic Python 2.5 days.
 
 
 The Traveller game in all forms is owned by Far Future Enterprises. Copyright 1977 - 2023 Far Future Enterprises. Traveller is a registered trademark of Far Future Enterprises.

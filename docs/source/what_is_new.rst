@@ -1,8 +1,13 @@
 **What's New in PyTravCalc?**
 =============================
 
+New in PyTravCalc 3.6.6?
+------------------------
+
+Updated for Python 3.11.4, pydice 3.12.7, and PyQt5 5.15.9.
+
+
 New in PyTravCalc 3.6.5
------------------------
 
 Updated to Python 3.11.0. Now using **pydice** for its dice rolling.
 
