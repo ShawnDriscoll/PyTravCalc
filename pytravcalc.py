@@ -1694,7 +1694,7 @@ if __name__ == '__main__':
     
     if len(sys.argv) < 2:
 
-        if trange[0] > 2023 or trange[1] > 11:
+        if trange[0] > 2024 or trange[1] > 12:
             __expired_tag__ = True
             __app__ += ' [EXPIRED]'
 
@@ -1738,7 +1738,7 @@ if __name__ == '__main__':
 
         app.exec_()
     
-    elif trange[0] > 2023 or trange[1] > 11:
+    elif trange[0] > 2024 or trange[1] > 12:
         __app__ += ' [EXPIRED]'
         '''
         Beta for this app has expired!
