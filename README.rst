@@ -11,7 +11,7 @@
 Notes
 -----
 
-**PyTravCalc** is being tested on Windows 10.
+**PyTravCalc** is being tested on Windows 11 and 10.
 
 Read the **PyTravCalc Manual** at http://pytravcalcmanual.readthedocs.io
 
@@ -21,7 +21,9 @@ Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/download
 What's New in 3.6.6?
 --------------------
 
-Updated for Python 3.11.4, pydice 3.12.7, and PyQt5 5.15.9.
+Updated for Python 3.11.6, pydice 3.12.9, and PyQt5 5.15.9.
+
+**Hex** and **eHex** rolls have been added.
 
 What's New in 3.6.5?
 --------------------
@@ -61,7 +63,7 @@ Requirements
 
 * **Windows 10**
 
-  This code has not been tested on Windows 11.
+  This code is being tested on Windows 11.
 
 * **Python 3.11**
    
@@ -72,11 +74,11 @@ Requirements
 
   PyQt5 is the framework used for displaying the Window GUI and buttons, etc.
 
-* **numpy 1.25.0**
+* **numpy 1.26.0**
 
   For building arrays.
 
-* **matplotlib 3.7.1**
+* **matplotlib 3.8.0**
 
   For graphics plotting.
 
@@ -113,7 +115,7 @@ Things To-Do
 
 * v3.6.6b
 
-  Updated to Python 3.11.4, pydice 3.12.7, and PyQt5 5.15.9.
+  Updated to Python 3.11.6, pydice 3.12.9, and PyQt5 5.15.9.
 
 * v3.6.5b
 
