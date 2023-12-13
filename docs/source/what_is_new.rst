@@ -4,7 +4,9 @@
 New in PyTravCalc 3.6.6?
 ------------------------
 
-Updated for Python 3.11.4, pydice 3.12.7, and PyQt5 5.15.9.
+Updated for Python 3.11.6, pydice 3.12.9, and PyQt5 5.15.9.
+
+**Hex** and **eHex** rolls have been added.
 
 
 New in PyTravCalc 3.6.5
