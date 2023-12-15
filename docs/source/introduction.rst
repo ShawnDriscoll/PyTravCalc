@@ -26,7 +26,7 @@ Requirements
 * **Microsoft Windows**
    
    **PyTravCalc** is being tested on Windows 10.
-   It has not been tested on Windows 11.
+   This code is being tested on Windows 11.
    
 * **Python 3.11**
    
@@ -37,11 +37,11 @@ Requirements
 
    PyQt5 is the framework used for displaying the Window GUI and buttons, etc.
 
-* **numpy 1.25.0**
+* **numpy 1.26.0**
 
    For building arrays.
 
-* **matplotlib 3.7.1**
+* **matplotlib 3.8.0**
 
    For graphics plotting.
 
@@ -50,4 +50,4 @@ Requirements
 Not Using Python?
 -----------------
 
-You can always run the .EXE version for Windows 10 if you don't have the Python language installed.
+You can always run the .EXE version for Windows 10 or 11 if you don't have the Python language installed.

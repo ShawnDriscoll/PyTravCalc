@@ -87,7 +87,7 @@ Requirements
 Not Using Python?
 -----------------
 
-You can always run the .EXE version for Windows 10 if you don't have the Python language installed.
+You can always run the .EXE version for Windows 10 or 11 if you don't have the Python language installed.
 
 
 .. |ss| raw:: html
@@ -105,6 +105,7 @@ Things To-Do
 | Cheat codes.
 |ss|
 
+| Add Hex and eHex rolls.
 | Add Advantage and Disadvantage roll types.
 | Make it talk.
 | Start on a To-Do.
