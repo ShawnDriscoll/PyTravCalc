@@ -18,8 +18,13 @@ Read the **PyTravCalc Manual** at http://pytravcalcmanual.readthedocs.io
 Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
 
 
+What's New in 3.7?
+------------------
+
+pydice updated to 3.13.
+
+
 What's New in 3.6.6?
---------------------
 
 Updated for Python 3.11.6, pydice 3.12.9, and PyQt5 5.15.9.
 
@@ -139,7 +144,7 @@ Things To-Do
   Initial release. Back in the Classic Python 2.5 days.
 
 
-The Traveller game in all forms is owned by Far Future Enterprises. Copyright 1977 - 2023 Far Future Enterprises. Traveller is a registered trademark of Far Future Enterprises.
+The Traveller game in all forms is owned by Far Future Enterprises. Copyright 1977 - 2024 Far Future Enterprises. Traveller is a registered trademark of Far Future Enterprises.
 
 Contact
 -------

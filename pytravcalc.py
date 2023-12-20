@@ -1,17 +1,17 @@
 #
-#   PyTravCalc 3.6.6 Beta for Mongoose Traveller 2nd Edition
+#   PyTravCalc 3.7 Beta for Mongoose Traveller 2nd Edition
 #   Written for Python 3.11
 #
 ##############################################################
 
 """
-PyTravCalc 3.6.6 Beta for Mongoose Traveller 2nd Edition
+PyTravCalc 3.7 Beta for Mongoose Traveller 2nd Edition
 --------------------------------------------------------
 
 This program rolls 6-sided dice and calculates their effects.
 
 The Traveller game in all forms is owned by Far Future Enterprises.
-Copyright 1977 - 2023 Far Future Enterprises.
+Copyright 1977 - 2024 Far Future Enterprises.
 Traveller is a registered trademark of Far Future Enterprises.
 """
 #import vlc
@@ -34,9 +34,9 @@ from matplotlib import font_manager
 import logging
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'PyTravCalc 3.6.6 Beta'
-__version__ = '3.6.6b'
-__py_version_req__ = (3,11,4)
+__app__ = 'PyTravCalc 3.7 Beta'
+__version__ = '3.7b'
+__py_version_req__ = (3,11,6)
 __expired_tag__ = False
 
 #form_class = uic.loadUiType("mainwindow.ui")[0]
@@ -1691,7 +1691,13 @@ if __name__ == '__main__':
     trange = time.localtime()
 
     log.info(__app__ + ' started, and running...')
-    
+    if sys.version_info[0:3] < __py_version_req__:
+        print('Warning:', sys.version_info[0:3], 'is an older version of Python installed.')
+        log.warning('Warning: ' + str(sys.version_info[0:3]) + ' is an older version of Python installed.')
+    elif sys.version_info[0:3] > __py_version_req__:
+        print('Warning:', sys.version_info[0:3], 'is a newer version of Python installed.')
+        log.warning('Warning: ' + str(sys.version_info[0:3]) + ' is a newer version of Python installed.')
+
     if len(sys.argv) < 2:
 
         if trange[0] > 2024 or trange[1] > 12:

@@ -36,16 +36,16 @@ master_doc = 'index'
 
 # General substitutions.
 project = 'PyTravCalc Manual'
-copyright = '2023, SHONNER CORP'
+copyright = '2024, SHONNER CORP'
 author = 'Shawn Driscoll'
 
 # The default replacements for |version| and |release|, also used in various
 # other places throughout the built documents.
 #
 # The short X.Y version.
-version = '3.6'
+version = '3.7'
 # The full version, including alpha/beta/rc tags.
-release = '3.6.6b (Second Printing)'
+release = '3.7.0b (First Printing)'
 #release = '(First Printing)'
 
 # There are two options for replacing |today|: either, you set today to some

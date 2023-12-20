@@ -25,8 +25,8 @@ Requirements
 
 * **Microsoft Windows**
    
-   **PyTravCalc** is being tested on Windows 10.
-   This code is being tested on Windows 11.
+   **PyTravCalc** is being tested on Windows 11.
+   It has been tested on Windows 10.
    
 * **Python 3.11**
    
