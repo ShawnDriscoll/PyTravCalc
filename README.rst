@@ -25,6 +25,7 @@ pydice updated to 3.13.
 
 
 What's New in 3.6.6?
+--------------------
 
 Updated for Python 3.11.6, pydice 3.12.9, and PyQt5 5.15.9.
 
@@ -118,6 +119,10 @@ Things To-Do
 |se|
 
 **Known History**
+
+* v3.7b
+
+  pydice updated to 3.13.
 
 * v3.6.6b
 
