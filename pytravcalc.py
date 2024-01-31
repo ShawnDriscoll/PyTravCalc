@@ -1,11 +1,11 @@
 #
-#   PyTravCalc 3.7 Beta for Mongoose Traveller 2nd Edition
+#   PyTravCalc 3.7.1 Beta for Mongoose Traveller 2nd Edition
 #   Written for Python 3.11
 #
 ##############################################################
 
 """
-PyTravCalc 3.7 Beta for Mongoose Traveller 2nd Edition
+PyTravCalc 3.7.1 Beta for Mongoose Traveller 2nd Edition
 --------------------------------------------------------
 
 This program rolls 6-sided dice and calculates their effects.
@@ -34,8 +34,8 @@ from matplotlib import font_manager
 import logging
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'PyTravCalc 3.7 Beta'
-__version__ = '3.7b'
+__app__ = 'PyTravCalc 3.7.1 Beta'
+__version__ = '3.7.1b'
 __py_version_req__ = (3,11,6)
 __expired_tag__ = False
 
@@ -126,6 +126,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.triggered.connect(self.GridGrooveDice_menu)
         self.actionYellowDice.triggered.connect(self.YellowDice_menu)
         self.actionSHONNERDice.triggered.connect(self.SHONNERDice_menu)
+        self.actionZocchiDice.triggered.connect(self.ZocchiDice_menu)
         self.actionQuestionDice.triggered.connect(self.QuestionDice_menu)
         self.actionMixedDice.triggered.connect(self.MixedDice_menu)
         self.actionVisit_Blog.triggered.connect(self.Visit_Blog)
@@ -234,10 +235,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridgroove_dice = False
         self.yellow_dice = False
         self.shonner_dice = False
+        self.zocchi_dice = False
         
         # Set the dice type to match the die chosen
         self.dice_type ='ak'
-        self.dice_list = ['st', 'tr', 'ak', 'me', 'cu', 'ro', 'gg', 'ye', 'sh']
+        self.dice_list = ['st', 'tr', 'ak', 'me', 'cu', 'ro', 'gg', 'ye', 'sh', 'zo']
         self.question_dice = False
         self.mixed_dice = False
 
@@ -277,6 +279,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
 
@@ -325,6 +328,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.actionGridGrooveDice.setDisabled(True)
             self.actionYellowDice.setDisabled(True)
             self.actionSHONNERDice.setDisabled(True)
+            self.actionZocchiDice.setDisabled(True)
             self.actionMixedDice.setDisabled(True)
             self.actionQuestionDice.setDisabled(True)
             self.actionMute.setDisabled(True)
@@ -1173,6 +1177,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridgroove_dice = False
         self.yellow_dice = False
         self.shonner_dice = False
+        self.zocchi_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1184,6 +1189,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'st'
@@ -1202,6 +1208,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridgroove_dice = False
         self.yellow_dice = False
         self.shonner_dice = False
+        self.zocchi_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1213,6 +1220,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'tr'
@@ -1231,6 +1239,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridgroove_dice = False
         self.yellow_dice = False
         self.shonner_dice = False
+        self.zocchi_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1242,6 +1251,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'ak'
@@ -1260,6 +1270,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridgroove_dice = False
         self.yellow_dice = False
         self.shonner_dice = False
+        self.zocchi_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1271,6 +1282,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'me'
@@ -1289,6 +1301,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridgroove_dice = False
         self.yellow_dice = False
         self.shonner_dice = False
+        self.zocchi_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1300,6 +1313,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'cu'
@@ -1318,6 +1332,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridgroove_dice = False
         self.yellow_dice = False
         self.shonner_dice = False
+        self.zocchi_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1329,6 +1344,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'ro'
@@ -1347,6 +1363,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridgroove_dice = True
         self.yellow_dice = False
         self.shonner_dice = False
+        self.zocchi_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1358,6 +1375,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'gg'
@@ -1376,6 +1394,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridgroove_dice = False
         self.yellow_dice = True
         self.shonner_dice = False
+        self.zocchi_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1387,6 +1406,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'ye'
@@ -1405,6 +1425,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridgroove_dice = False
         self.yellow_dice = False
         self.shonner_dice = True
+        self.zocchi_dice = False
         self.question_dice = False
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1416,10 +1437,42 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'sh'
         log.debug('SHONNER dice selected')
+    
+    def ZocchiDice_menu(self):
+        '''
+        set flags for Zocchi dice use
+        '''
+        self.standard_dice = False
+        self.traveller_dice = False
+        self.ako_dice = False
+        self.metal_dice = False
+        self.cubble_dice = False
+        self.roman_dice = False
+        self.gridgroove_dice = False
+        self.yellow_dice = False
+        self.shonner_dice = False
+        self.zocchi_dice = True
+        self.question_dice = False
+        self.mixed_dice = False
+        self.actionStandardDice.setDisabled(self.standard_dice)
+        self.actionTravellerDice.setDisabled(self.traveller_dice)
+        self.actionAKODice.setDisabled(self.ako_dice)
+        self.actionMetalDice.setDisabled(self.metal_dice)
+        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
+        self.actionRomanDice.setDisabled(self.roman_dice)
+        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
+        self.actionYellowDice.setDisabled(self.yellow_dice)
+        self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
+        self.actionQuestionDice.setDisabled(self.question_dice)
+        self.actionMixedDice.setDisabled(self.mixed_dice)
+        self.dice_type = 'zo'
+        log.debug('Zocchi dice selected')
 
     def QuestionDice_menu(self):
         '''
@@ -1434,6 +1487,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridgroove_dice = False
         self.yellow_dice = False
         self.shonner_dice = False
+        self.zocchi_dice = False
         self.question_dice = True
         self.mixed_dice = False
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1445,6 +1499,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = 'qu'
@@ -1463,6 +1518,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.gridgroove_dice = False
         self.yellow_dice = False
         self.shonner_dice = False
+        self.zocchi_dice = False
         self.question_dice = False
         self.mixed_dice = True
         self.actionStandardDice.setDisabled(self.standard_dice)
@@ -1474,6 +1530,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
+        self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
         self.dice_type = ''

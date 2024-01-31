@@ -18,6 +18,12 @@ Read the **PyTravCalc Manual** at http://pytravcalcmanual.readthedocs.io
 Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
 
 
+What's New in 3.7.1?
+--------------------
+
+Zocchi dice added.
+
+
 What's New in 3.7?
 ------------------
 
@@ -67,9 +73,9 @@ What's New?
 Requirements
 ------------
 
-* **Windows 10**
+* **Windows 11**
 
-  This code is being tested on Windows 11.
+  This code has been tested on Windows 10.
 
 * **Python 3.11**
    
@@ -119,6 +125,10 @@ Things To-Do
 |se|
 
 **Known History**
+
+* v3.7.1b
+
+  Zocchi dice added.
 
 * v3.7b
 

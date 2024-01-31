@@ -1,8 +1,13 @@
 **What's New in PyTravCalc?**
 =============================
 
+New in PyTravCalc 3.7.1?
+------------------------
+
+Zocchi dice added.
+
+
 New in PyTravCalc 3.7?
-----------------------
 
 pydice updated to 3.13.
 
