@@ -23,6 +23,9 @@ What's New in 3.7.1?
 
 Zocchi dice added.
 
+.. image:: docs/source/video4.png
+    :target: https://www.youtube.com/watch?v=y8FbkSnsbDk
+
 
 What's New in 3.7?
 ------------------
