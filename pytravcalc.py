@@ -1168,359 +1168,99 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         '''
         set flags for standard dice use
         '''
-        self.standard_dice = True
-        self.traveller_dice = False
-        self.ako_dice = False
-        self.metal_dice = False
-        self.cubble_dice = False
-        self.roman_dice = False
-        self.gridgroove_dice = False
-        self.yellow_dice = False
-        self.shonner_dice = False
-        self.zocchi_dice = False
-        self.question_dice = False
-        self.mixed_dice = False
-        self.actionStandardDice.setDisabled(self.standard_dice)
-        self.actionTravellerDice.setDisabled(self.traveller_dice)
-        self.actionAKODice.setDisabled(self.ako_dice)
-        self.actionMetalDice.setDisabled(self.metal_dice)
-        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
-        self.actionRomanDice.setDisabled(self.roman_dice)
-        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
-        self.actionYellowDice.setDisabled(self.yellow_dice)
-        self.actionSHONNERDice.setDisabled(self.shonner_dice)
-        self.actionZocchiDice.setDisabled(self.zocchi_dice)
-        self.actionQuestionDice.setDisabled(self.question_dice)
-        self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'st'
-        log.debug('Standard dice selected')
+        dice_flags = [True, False, False, False, False, False, False, False, False, False, False, False, 'st', 'Standard']
+        self.set_dice_menu(dice_flags)
         
     def TravellerDice_menu(self):
         '''
         set flags for Traveller dice use
         '''
-        self.standard_dice = False
-        self.traveller_dice = True
-        self.ako_dice = False
-        self.metal_dice = False
-        self.cubble_dice = False
-        self.roman_dice = False
-        self.gridgroove_dice = False
-        self.yellow_dice = False
-        self.shonner_dice = False
-        self.zocchi_dice = False
-        self.question_dice = False
-        self.mixed_dice = False
-        self.actionStandardDice.setDisabled(self.standard_dice)
-        self.actionTravellerDice.setDisabled(self.traveller_dice)
-        self.actionAKODice.setDisabled(self.ako_dice)
-        self.actionMetalDice.setDisabled(self.metal_dice)
-        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
-        self.actionRomanDice.setDisabled(self.roman_dice)
-        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
-        self.actionYellowDice.setDisabled(self.yellow_dice)
-        self.actionSHONNERDice.setDisabled(self.shonner_dice)
-        self.actionZocchiDice.setDisabled(self.zocchi_dice)
-        self.actionQuestionDice.setDisabled(self.question_dice)
-        self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'tr'
-        log.debug('Traveller dice selected')
+        dice_flags = [False, True, False, False, False, False, False, False, False, False, False, False, 'tr', 'Traveller']
+        self.set_dice_menu(dice_flags)
 
     def AKODice_menu(self):
         '''
         set flags for AKO dice use
         '''
-        self.standard_dice = False
-        self.traveller_dice = False
-        self.ako_dice = True
-        self.metal_dice = False
-        self.cubble_dice = False
-        self.roman_dice = False
-        self.gridgroove_dice = False
-        self.yellow_dice = False
-        self.shonner_dice = False
-        self.zocchi_dice = False
-        self.question_dice = False
-        self.mixed_dice = False
-        self.actionStandardDice.setDisabled(self.standard_dice)
-        self.actionTravellerDice.setDisabled(self.traveller_dice)
-        self.actionAKODice.setDisabled(self.ako_dice)
-        self.actionMetalDice.setDisabled(self.metal_dice)
-        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
-        self.actionRomanDice.setDisabled(self.roman_dice)
-        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
-        self.actionYellowDice.setDisabled(self.yellow_dice)
-        self.actionSHONNERDice.setDisabled(self.shonner_dice)
-        self.actionZocchiDice.setDisabled(self.zocchi_dice)
-        self.actionQuestionDice.setDisabled(self.question_dice)
-        self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'ak'
-        log.debug('AKO dice selected')
+        dice_flags = [False, False, True, False, False, False, False, False, False, False, False, False, 'ak', 'AKO']
+        self.set_dice_menu(dice_flags)
 
     def MetalDice_menu(self):
         '''
         set flags for metal dice use
         '''
-        self.standard_dice = False
-        self.traveller_dice = False
-        self.ako_dice = False
-        self.metal_dice = True
-        self.cubble_dice = False
-        self.roman_dice = False
-        self.gridgroove_dice = False
-        self.yellow_dice = False
-        self.shonner_dice = False
-        self.zocchi_dice = False
-        self.question_dice = False
-        self.mixed_dice = False
-        self.actionStandardDice.setDisabled(self.standard_dice)
-        self.actionTravellerDice.setDisabled(self.traveller_dice)
-        self.actionAKODice.setDisabled(self.ako_dice)
-        self.actionMetalDice.setDisabled(self.metal_dice)
-        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
-        self.actionRomanDice.setDisabled(self.roman_dice)
-        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
-        self.actionYellowDice.setDisabled(self.yellow_dice)
-        self.actionSHONNERDice.setDisabled(self.shonner_dice)
-        self.actionZocchiDice.setDisabled(self.zocchi_dice)
-        self.actionQuestionDice.setDisabled(self.question_dice)
-        self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'me'
-        log.debug('Metal dice selected')
+        dice_flags = [False, False, False, True, False, False, False, False, False, False, False, False, 'me', 'Metal']
+        self.set_dice_menu(dice_flags)
 
     def CUBBLEDice_menu(self):
         '''
         set flags for CUBBLED dice use
         '''
-        self.standard_dice = False
-        self.traveller_dice = False
-        self.ako_dice = False
-        self.metal_dice = False
-        self.cubble_dice = True
-        self.roman_dice = False
-        self.gridgroove_dice = False
-        self.yellow_dice = False
-        self.shonner_dice = False
-        self.zocchi_dice = False
-        self.question_dice = False
-        self.mixed_dice = False
-        self.actionStandardDice.setDisabled(self.standard_dice)
-        self.actionTravellerDice.setDisabled(self.traveller_dice)
-        self.actionAKODice.setDisabled(self.ako_dice)
-        self.actionMetalDice.setDisabled(self.metal_dice)
-        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
-        self.actionRomanDice.setDisabled(self.roman_dice)
-        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
-        self.actionYellowDice.setDisabled(self.yellow_dice)
-        self.actionSHONNERDice.setDisabled(self.shonner_dice)
-        self.actionZocchiDice.setDisabled(self.zocchi_dice)
-        self.actionQuestionDice.setDisabled(self.question_dice)
-        self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'cu'
-        log.debug('CUBBLE dice selected')
+        dice_flags = [False, False, False, False, True, False, False, False, False, False, False, False, 'cu', 'CUBBLE']
+        self.set_dice_menu(dice_flags)
         
     def RomanDice_menu(self):
         '''
         set flags for Roman dice use
         '''
-        self.standard_dice = False
-        self.traveller_dice = False
-        self.ako_dice = False
-        self.metal_dice = False
-        self.cubble_dice = False
-        self.roman_dice = True
-        self.gridgroove_dice = False
-        self.yellow_dice = False
-        self.shonner_dice = False
-        self.zocchi_dice = False
-        self.question_dice = False
-        self.mixed_dice = False
-        self.actionStandardDice.setDisabled(self.standard_dice)
-        self.actionTravellerDice.setDisabled(self.traveller_dice)
-        self.actionAKODice.setDisabled(self.ako_dice)
-        self.actionMetalDice.setDisabled(self.metal_dice)
-        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
-        self.actionRomanDice.setDisabled(self.roman_dice)
-        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
-        self.actionYellowDice.setDisabled(self.yellow_dice)
-        self.actionSHONNERDice.setDisabled(self.shonner_dice)
-        self.actionZocchiDice.setDisabled(self.zocchi_dice)
-        self.actionQuestionDice.setDisabled(self.question_dice)
-        self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'ro'
-        log.debug('Roman dice selected')
+        dice_flags = [False, False, False, False, False, True, False, False, False, False, False, False, 'ro', 'Roman']
+        self.set_dice_menu(dice_flags)
         
     def GridGrooveDice_menu(self):
         '''
-        set flags for GridGroove dice use
+        set flags for Grid Groove dice use
         '''
-        self.standard_dice = False
-        self.traveller_dice = False
-        self.ako_dice = False
-        self.metal_dice = False
-        self.cubble_dice = False
-        self.roman_dice = False
-        self.gridgroove_dice = True
-        self.yellow_dice = False
-        self.shonner_dice = False
-        self.zocchi_dice = False
-        self.question_dice = False
-        self.mixed_dice = False
-        self.actionStandardDice.setDisabled(self.standard_dice)
-        self.actionTravellerDice.setDisabled(self.traveller_dice)
-        self.actionAKODice.setDisabled(self.ako_dice)
-        self.actionMetalDice.setDisabled(self.metal_dice)
-        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
-        self.actionRomanDice.setDisabled(self.roman_dice)
-        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
-        self.actionYellowDice.setDisabled(self.yellow_dice)
-        self.actionSHONNERDice.setDisabled(self.shonner_dice)
-        self.actionZocchiDice.setDisabled(self.zocchi_dice)
-        self.actionQuestionDice.setDisabled(self.question_dice)
-        self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'gg'
-        log.debug('Grid Groove dice selected')
+        dice_flags = [False, False, False, False, False, False, True, False, False, False, False, False, 'gg', 'Grid Groove']
+        self.set_dice_menu(dice_flags)
     
     def YellowDice_menu(self):
         '''
         set flags for Yellow dice use
         '''
-        self.standard_dice = False
-        self.traveller_dice = False
-        self.ako_dice = False
-        self.metal_dice = False
-        self.cubble_dice = False
-        self.roman_dice = False
-        self.gridgroove_dice = False
-        self.yellow_dice = True
-        self.shonner_dice = False
-        self.zocchi_dice = False
-        self.question_dice = False
-        self.mixed_dice = False
-        self.actionStandardDice.setDisabled(self.standard_dice)
-        self.actionTravellerDice.setDisabled(self.traveller_dice)
-        self.actionAKODice.setDisabled(self.ako_dice)
-        self.actionMetalDice.setDisabled(self.metal_dice)
-        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
-        self.actionRomanDice.setDisabled(self.roman_dice)
-        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
-        self.actionYellowDice.setDisabled(self.yellow_dice)
-        self.actionSHONNERDice.setDisabled(self.shonner_dice)
-        self.actionZocchiDice.setDisabled(self.zocchi_dice)
-        self.actionQuestionDice.setDisabled(self.question_dice)
-        self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'ye'
-        log.debug('Yellow dice selected')
-    
+        dice_flags = [False, False, False, False, False, False, False, True, False, False, False, False, 'ye', 'Yellow']
+        self.set_dice_menu(dice_flags)
+
     def SHONNERDice_menu(self):
         '''
         set flags for SHONNER dice use
         '''
-        self.standard_dice = False
-        self.traveller_dice = False
-        self.ako_dice = False
-        self.metal_dice = False
-        self.cubble_dice = False
-        self.roman_dice = False
-        self.gridgroove_dice = False
-        self.yellow_dice = False
-        self.shonner_dice = True
-        self.zocchi_dice = False
-        self.question_dice = False
-        self.mixed_dice = False
-        self.actionStandardDice.setDisabled(self.standard_dice)
-        self.actionTravellerDice.setDisabled(self.traveller_dice)
-        self.actionAKODice.setDisabled(self.ako_dice)
-        self.actionMetalDice.setDisabled(self.metal_dice)
-        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
-        self.actionRomanDice.setDisabled(self.roman_dice)
-        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
-        self.actionYellowDice.setDisabled(self.yellow_dice)
-        self.actionSHONNERDice.setDisabled(self.shonner_dice)
-        self.actionZocchiDice.setDisabled(self.zocchi_dice)
-        self.actionQuestionDice.setDisabled(self.question_dice)
-        self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'sh'
-        log.debug('SHONNER dice selected')
+        dice_flags = [False, False, False, False, False, False, False, False, True, False, False, False, 'sh', 'SHONNER']
+        self.set_dice_menu(dice_flags)
     
     def ZocchiDice_menu(self):
         '''
         set flags for Zocchi dice use
         '''
-        self.standard_dice = False
-        self.traveller_dice = False
-        self.ako_dice = False
-        self.metal_dice = False
-        self.cubble_dice = False
-        self.roman_dice = False
-        self.gridgroove_dice = False
-        self.yellow_dice = False
-        self.shonner_dice = False
-        self.zocchi_dice = True
-        self.question_dice = False
-        self.mixed_dice = False
-        self.actionStandardDice.setDisabled(self.standard_dice)
-        self.actionTravellerDice.setDisabled(self.traveller_dice)
-        self.actionAKODice.setDisabled(self.ako_dice)
-        self.actionMetalDice.setDisabled(self.metal_dice)
-        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
-        self.actionRomanDice.setDisabled(self.roman_dice)
-        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
-        self.actionYellowDice.setDisabled(self.yellow_dice)
-        self.actionSHONNERDice.setDisabled(self.shonner_dice)
-        self.actionZocchiDice.setDisabled(self.zocchi_dice)
-        self.actionQuestionDice.setDisabled(self.question_dice)
-        self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'zo'
-        log.debug('Zocchi dice selected')
+        dice_flags = [False, False, False, False, False, False, False, False, False, True, False, False, 'zo', 'Zocchi']
+        self.set_dice_menu(dice_flags)
 
     def QuestionDice_menu(self):
         '''
         set flags for Question Mark dice use
         '''
-        self.standard_dice = False
-        self.traveller_dice = False
-        self.ako_dice = False
-        self.metal_dice = False
-        self.cubble_dice = False
-        self.roman_dice = False
-        self.gridgroove_dice = False
-        self.yellow_dice = False
-        self.shonner_dice = False
-        self.zocchi_dice = False
-        self.question_dice = True
-        self.mixed_dice = False
-        self.actionStandardDice.setDisabled(self.standard_dice)
-        self.actionTravellerDice.setDisabled(self.traveller_dice)
-        self.actionAKODice.setDisabled(self.ako_dice)
-        self.actionMetalDice.setDisabled(self.metal_dice)
-        self.actionCUBBLEDice.setDisabled(self.cubble_dice)
-        self.actionRomanDice.setDisabled(self.roman_dice)
-        self.actionGridGrooveDice.setDisabled(self.gridgroove_dice)
-        self.actionYellowDice.setDisabled(self.yellow_dice)
-        self.actionSHONNERDice.setDisabled(self.shonner_dice)
-        self.actionZocchiDice.setDisabled(self.zocchi_dice)
-        self.actionQuestionDice.setDisabled(self.question_dice)
-        self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = 'qu'
-        log.debug('Question dice selected')
+        dice_flags = [False, False, False, False, False, False, False, False, False, False, True, False, 'qu', 'Question']
+        self.set_dice_menu(dice_flags)
         
     def MixedDice_menu(self):
         '''
         set flags for mixed-use dice
         '''
-        self.standard_dice = False
-        self.traveller_dice = False
-        self.ako_dice = False
-        self.metal_dice = False
-        self.cubble_dice = False
-        self.roman_dice = False
-        self.gridgroove_dice = False
-        self.yellow_dice = False
-        self.shonner_dice = False
-        self.zocchi_dice = False
-        self.question_dice = False
-        self.mixed_dice = True
+        dice_flags = [False, False, False, False, False, False, False, False, False, False, False, True, '', 'Mixed']
+        self.set_dice_menu(dice_flags)
+
+    def set_dice_menu(self, menu_flags):
+        self.standard_dice = menu_flags[0]
+        self.traveller_dice = menu_flags[1]
+        self.ako_dice = menu_flags[2]
+        self.metal_dice = menu_flags[3]
+        self.cubble_dice = menu_flags[4]
+        self.roman_dice = menu_flags[5]
+        self.gridgroove_dice = menu_flags[6]
+        self.yellow_dice = menu_flags[7]
+        self.shonner_dice = menu_flags[8]
+        self.zocchi_dice = menu_flags[9]
+        self.question_dice = menu_flags[10]
+        self.mixed_dice = menu_flags[11]
         self.actionStandardDice.setDisabled(self.standard_dice)
         self.actionTravellerDice.setDisabled(self.traveller_dice)
         self.actionAKODice.setDisabled(self.ako_dice)
@@ -1533,9 +1273,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionZocchiDice.setDisabled(self.zocchi_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = ''
-        log.debug('Mixed dice selected')
-        
+        self.dice_type = menu_flags[12]
+        log.debug(menu_flags[13] + ' dice selected')
+
     def Visit_Blog(self):
         '''
         open web browser to blog URL
