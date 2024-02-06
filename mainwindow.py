@@ -889,6 +889,11 @@ class Ui_MainWindow(object):
         icon11.addPixmap(QtGui.QPixmap(":/images/die2_6zo.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.actionZocchiDice.setIcon(icon11)
         self.actionZocchiDice.setObjectName("actionZocchiDice")
+        self.actionXLP_ReverseDice = QtWidgets.QAction(MainWindow)
+        icon12 = QtGui.QIcon()
+        icon12.addPixmap(QtGui.QPixmap(":/images/die2_6xl.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.actionXLP_ReverseDice.setIcon(icon12)
+        self.actionXLP_ReverseDice.setObjectName("actionXLP_ReverseDice")
         self.menuAction.addAction(self.actionRoll_2D)
         self.menuAction.addAction(self.actionRoll_Boon)
         self.menuAction.addAction(self.actionRoll_Bane)
@@ -913,6 +918,7 @@ class Ui_MainWindow(object):
         self.menuDice.addAction(self.actionYellowDice)
         self.menuDice.addAction(self.actionSHONNERDice)
         self.menuDice.addAction(self.actionZocchiDice)
+        self.menuDice.addAction(self.actionXLP_ReverseDice)
         self.menuDice.addSeparator()
         self.menuDice.addAction(self.actionMixedDice)
         self.menuDice.addSeparator()
@@ -960,7 +966,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "PyTravCalc 3.7.1 (Beta)"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "PyTravCalc 3.7.2 (Beta)"))
         self.taskBox.setTitle(_translate("MainWindow", "Task"))
         self.effectlabel.setText(_translate("MainWindow", "Effect"))
         self.effect_result.setToolTip(_translate("MainWindow", "Task effect"))
@@ -1107,5 +1113,7 @@ class Ui_MainWindow(object):
         self.actionSHONNERDice.setStatusTip(_translate("MainWindow", "Use SHONNER Dice"))
         self.actionZocchiDice.setText(_translate("MainWindow", "Zocchi"))
         self.actionZocchiDice.setStatusTip(_translate("MainWindow", "Use Zocchi Dice"))
+        self.actionXLP_ReverseDice.setText(_translate("MainWindow", "XLP Reverse"))
+        self.actionXLP_ReverseDice.setStatusTip(_translate("MainWindow", "Use XLP Dice"))
 from mplwidget import MplWidget
 import pytravcalc_rc

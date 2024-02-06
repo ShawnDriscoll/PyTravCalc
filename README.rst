@@ -18,6 +18,12 @@ Read the **PyTravCalc Manual** at http://pytravcalcmanual.readthedocs.io
 Download the PDF from https://readthedocs.org/projects/pytravcalcmanual/downloads/pdf/latest
 
 
+What's New in 3.7.2?
+--------------------
+
+XLP Reverse dice added.
+
+
 What's New in 3.7.1?
 --------------------
 
@@ -39,6 +45,7 @@ What's New in 3.6.6?
 Updated for Python 3.11.6, pydice 3.12.9, and PyQt5 5.15.9.
 
 **Hex** and **eHex** rolls have been added.
+
 
 What's New in 3.6.5?
 --------------------
@@ -128,6 +135,10 @@ Things To-Do
 |se|
 
 **Known History**
+
+* v3.7.2b
+
+  XLP Reverse dice added.
 
 * v3.7.1b
 

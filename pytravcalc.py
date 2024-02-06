@@ -1,11 +1,11 @@
 #
-#   PyTravCalc 3.7.1 Beta for Mongoose Traveller 2nd Edition
+#   PyTravCalc 3.7.2 Beta for Mongoose Traveller 2nd Edition
 #   Written for Python 3.11
 #
 ##############################################################
 
 """
-PyTravCalc 3.7.1 Beta for Mongoose Traveller 2nd Edition
+PyTravCalc 3.7.2 Beta for Mongoose Traveller 2nd Edition
 --------------------------------------------------------
 
 This program rolls 6-sided dice and calculates their effects.
@@ -34,8 +34,8 @@ from matplotlib import font_manager
 import logging
 
 __author__ = 'Shawn Driscoll <shawndriscoll@hotmail.com>\nshawndriscoll.blogspot.com'
-__app__ = 'PyTravCalc 3.7.1 Beta'
-__version__ = '3.7.1b'
+__app__ = 'PyTravCalc 3.7.2 Beta'
+__version__ = '3.7.2b'
 __py_version_req__ = (3,11,6)
 __expired_tag__ = False
 
@@ -127,6 +127,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionYellowDice.triggered.connect(self.YellowDice_menu)
         self.actionSHONNERDice.triggered.connect(self.SHONNERDice_menu)
         self.actionZocchiDice.triggered.connect(self.ZocchiDice_menu)
+        self.actionXLP_ReverseDice.triggered.connect(self.XLP_ReverseDice_menu)
         self.actionQuestionDice.triggered.connect(self.QuestionDice_menu)
         self.actionMixedDice.triggered.connect(self.MixedDice_menu)
         self.actionVisit_Blog.triggered.connect(self.Visit_Blog)
@@ -236,10 +237,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.yellow_dice = False
         self.shonner_dice = False
         self.zocchi_dice = False
+        self.xlp_reverse_dice = False
         
         # Set the dice type to match the die chosen
         self.dice_type ='ak'
-        self.dice_list = ['st', 'tr', 'ak', 'me', 'cu', 'ro', 'gg', 'ye', 'sh', 'zo']
+        self.dice_list = ['st', 'tr', 'ak', 'me', 'cu', 'ro', 'gg', 'ye', 'sh', 'zo', 'xl']
         self.question_dice = False
         self.mixed_dice = False
 
@@ -280,6 +282,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionZocchiDice.setDisabled(self.zocchi_dice)
+        self.actionXLP_ReverseDice.setDisabled(self.xlp_reverse_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
 
@@ -329,6 +332,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.actionYellowDice.setDisabled(True)
             self.actionSHONNERDice.setDisabled(True)
             self.actionZocchiDice.setDisabled(True)
+            self.actionXLP_ReverseDice.setDisabled(True)
             self.actionMixedDice.setDisabled(True)
             self.actionQuestionDice.setDisabled(True)
             self.actionMute.setDisabled(True)
@@ -1168,84 +1172,91 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         '''
         set flags for standard dice use
         '''
-        dice_flags = [True, False, False, False, False, False, False, False, False, False, False, False, 'st', 'Standard']
+        dice_flags = [True, False, False, False, False, False, False, False, False, False, False, False, False, 'st', 'Standard']
         self.set_dice_menu(dice_flags)
         
     def TravellerDice_menu(self):
         '''
         set flags for Traveller dice use
         '''
-        dice_flags = [False, True, False, False, False, False, False, False, False, False, False, False, 'tr', 'Traveller']
+        dice_flags = [False, True, False, False, False, False, False, False, False, False, False, False, False, 'tr', 'Traveller']
         self.set_dice_menu(dice_flags)
 
     def AKODice_menu(self):
         '''
         set flags for AKO dice use
         '''
-        dice_flags = [False, False, True, False, False, False, False, False, False, False, False, False, 'ak', 'AKO']
+        dice_flags = [False, False, True, False, False, False, False, False, False, False, False, False, False, 'ak', 'AKO']
         self.set_dice_menu(dice_flags)
 
     def MetalDice_menu(self):
         '''
         set flags for metal dice use
         '''
-        dice_flags = [False, False, False, True, False, False, False, False, False, False, False, False, 'me', 'Metal']
+        dice_flags = [False, False, False, True, False, False, False, False, False, False, False, False, False, 'me', 'Metal']
         self.set_dice_menu(dice_flags)
 
     def CUBBLEDice_menu(self):
         '''
         set flags for CUBBLED dice use
         '''
-        dice_flags = [False, False, False, False, True, False, False, False, False, False, False, False, 'cu', 'CUBBLE']
+        dice_flags = [False, False, False, False, True, False, False, False, False, False, False, False, False, 'cu', 'CUBBLE']
         self.set_dice_menu(dice_flags)
         
     def RomanDice_menu(self):
         '''
         set flags for Roman dice use
         '''
-        dice_flags = [False, False, False, False, False, True, False, False, False, False, False, False, 'ro', 'Roman']
+        dice_flags = [False, False, False, False, False, True, False, False, False, False, False, False, False, 'ro', 'Roman']
         self.set_dice_menu(dice_flags)
         
     def GridGrooveDice_menu(self):
         '''
         set flags for Grid Groove dice use
         '''
-        dice_flags = [False, False, False, False, False, False, True, False, False, False, False, False, 'gg', 'Grid Groove']
+        dice_flags = [False, False, False, False, False, False, True, False, False, False, False, False, False, 'gg', 'Grid Groove']
         self.set_dice_menu(dice_flags)
     
     def YellowDice_menu(self):
         '''
         set flags for Yellow dice use
         '''
-        dice_flags = [False, False, False, False, False, False, False, True, False, False, False, False, 'ye', 'Yellow']
+        dice_flags = [False, False, False, False, False, False, False, True, False, False, False, False, False, 'ye', 'Yellow']
         self.set_dice_menu(dice_flags)
 
     def SHONNERDice_menu(self):
         '''
         set flags for SHONNER dice use
         '''
-        dice_flags = [False, False, False, False, False, False, False, False, True, False, False, False, 'sh', 'SHONNER']
+        dice_flags = [False, False, False, False, False, False, False, False, True, False, False, False, False, 'sh', 'SHONNER']
         self.set_dice_menu(dice_flags)
     
     def ZocchiDice_menu(self):
         '''
         set flags for Zocchi dice use
         '''
-        dice_flags = [False, False, False, False, False, False, False, False, False, True, False, False, 'zo', 'Zocchi']
+        dice_flags = [False, False, False, False, False, False, False, False, False, True, False, False, False, 'zo', 'Zocchi']
+        self.set_dice_menu(dice_flags)
+    
+    def XLP_ReverseDice_menu(self):
+        '''
+        set flags for XLP Reverse dice use
+        '''
+        dice_flags = [False, False, False, False, False, False, False, False, False, False, True, False, False, 'xl', 'XLP Reverse']
         self.set_dice_menu(dice_flags)
 
     def QuestionDice_menu(self):
         '''
         set flags for Question Mark dice use
         '''
-        dice_flags = [False, False, False, False, False, False, False, False, False, False, True, False, 'qu', 'Question']
+        dice_flags = [False, False, False, False, False, False, False, False, False, False, False, True, False, 'qu', 'Question']
         self.set_dice_menu(dice_flags)
         
     def MixedDice_menu(self):
         '''
         set flags for mixed-use dice
         '''
-        dice_flags = [False, False, False, False, False, False, False, False, False, False, False, True, '', 'Mixed']
+        dice_flags = [False, False, False, False, False, False, False, False, False, False, False, False, True, '', 'Mixed']
         self.set_dice_menu(dice_flags)
 
     def set_dice_menu(self, menu_flags):
@@ -1259,8 +1270,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.yellow_dice = menu_flags[7]
         self.shonner_dice = menu_flags[8]
         self.zocchi_dice = menu_flags[9]
-        self.question_dice = menu_flags[10]
-        self.mixed_dice = menu_flags[11]
+        self.xlp_reverse_dice = menu_flags[10]
+        self.question_dice = menu_flags[11]
+        self.mixed_dice = menu_flags[12]
         self.actionStandardDice.setDisabled(self.standard_dice)
         self.actionTravellerDice.setDisabled(self.traveller_dice)
         self.actionAKODice.setDisabled(self.ako_dice)
@@ -1271,10 +1283,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.actionYellowDice.setDisabled(self.yellow_dice)
         self.actionSHONNERDice.setDisabled(self.shonner_dice)
         self.actionZocchiDice.setDisabled(self.zocchi_dice)
+        self.actionXLP_ReverseDice.setDisabled(self.xlp_reverse_dice)
         self.actionQuestionDice.setDisabled(self.question_dice)
         self.actionMixedDice.setDisabled(self.mixed_dice)
-        self.dice_type = menu_flags[12]
-        log.debug(menu_flags[13] + ' dice selected')
+        self.dice_type = menu_flags[13]
+        log.debug(menu_flags[14] + ' dice selected')
 
     def Visit_Blog(self):
         '''
