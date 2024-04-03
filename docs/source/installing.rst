@@ -18,5 +18,4 @@ Running PyTravCalc
 If you have Python 3.11 installed, you can start ``pytravcalc.py`` from a CMD prompt or double-click
 the Python script.
 
-Alternatively, if you do not have Python 3.11, you can start ``pytravcalc.exe`` from a CMD prompt or by double-clicking
-the executable program.
+

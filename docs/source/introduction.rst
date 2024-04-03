@@ -45,9 +45,4 @@ Requirements
 
    For graphics plotting.
 
-   
 
-Not Using Python?
------------------
-
-You can always run the .EXE version for Windows 10 or 11 if you don't have the Python language installed.
